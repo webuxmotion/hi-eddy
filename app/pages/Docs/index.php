@@ -6,37 +6,37 @@
 <div class="docs">
 <h1>HI-<i>EDDY</i></h1>
     <p>hi-eddy - це освітня платформа.</p>
-    <img src="/docs/img/hero-image.png" />
+    <img src="/docs-images/img/hero-image.png" />
     <br>
-    <img src="/docs/img/image-1.png" />
+    <img src="/docs-images-images/img/image-1.png" />
     <br>
-    <img src="/docs/img/image-2.png" />
+    <img src="/docs-images/img/image-2.png" />
     <br>
-    <img src="/docs/img/lesson-1.png" />
+    <img src="/docs-images/img/lesson-1.png" />
     <br>
-    <img src="/docs/img/lesson-2.png" />
+    <img src="/docs-images/img/lesson-2.png" />
     <br>
-    <img src="/docs/img/lesson-3.png" />
+    <img src="/docs-images/img/lesson-3.png" />
     <br>
-    <img src="/docs/img/sketch-main-page.jpeg" />
+    <img src="/docs-images/img/sketch-main-page.jpeg" />
     <br>
-    <img src="/docs/img/sketch-db-tables-1.jpeg" />
+    <img src="/docs-images/img/sketch-db-tables-1.jpeg" />
     <br>
-    <img src="/docs/img/sketch-db-tables-2.jpeg" />
+    <img src="/docs-images/img/sketch-db-tables-2.jpeg" />
     <br>
-    <img src="/docs/img/sketch-functionality-1.jpeg" />
+    <img src="/docs-images/img/sketch-functionality-1.jpeg" />
     <br>
-    <img src="/docs/img/sketch-functionality-2.jpeg" />
+    <img src="/docs-images/img/sketch-functionality-2.jpeg" />
     <br>
-    <img src="/docs/img/sketch-functionality-3.jpeg" />
+    <img src="/docs-images/img/sketch-functionality-3.jpeg" />
     <br>
-    <img src="/docs/img/face-1.jpeg" />
+    <img src="/docs-images/img/face-1.jpeg" />
     <br>
-    <img src="/docs/img/face-2.jpeg" />
+    <img src="/docs-images/img/face-2.jpeg" />
     <br>
-    <img src="/docs/img/face-3.jpeg" />
+    <img src="/docs-images/img/face-3.jpeg" />
     <br>
-    <img src="/docs/img/face-4.jpeg" />
+    <img src="/docs-images/img/face-4.jpeg" />
     <br>
-    <img src="/docs/img/face-5.jpeg" />
+    <img src="/docs-images/img/face-5.jpeg" />
 </div>
