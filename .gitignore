@@ -3,7 +3,6 @@
 !/tmp/cache/
 !/tmp/cache/.gitkeep
 node_modules
-public/dist
 yarn.lock
 .env
 composer.lock
