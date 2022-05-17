@@ -1,11 +1,4 @@
-<div class="hero">
-  <?=$this->component('logo')?>
-  <h1>HI-<i>EDDY</i></h1>
-  <p class="hero__text">
-    hi-eddy - це освітня платформа.
-  </p>
-  <?=$this->component('button', [
-    "title" => "Дивитись документацію",
-    "href" => "/docs",
-  ])?>
+<div class="hero" style="background-image: url('/hero.png');">
+  <h2 class="hero__text">Давай <span>напишемо сайт</span> <br><span>разом</span> за 10 хвилин</h2>
+  <a href="" class="hero__button">Почати</a>
 </div>

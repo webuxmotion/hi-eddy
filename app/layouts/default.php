@@ -9,7 +9,11 @@
   <link href="/dist/styles.css" rel="stylesheet">
 </head>
 <body>
-  <?=$content?>
+  <?=$this->component('sidebar')?>
+  <div class="content">
+    <?=$this->component('header')?>
+    <?=$content?>
+  </div>
   
   <script>
     var serverUrl = "<?=siteUrl()?>";
