@@ -6,6 +6,8 @@
   <meta name="author" content="Your Name">
   <?=$this::getMeta(); ?>
   <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/styles/stackoverflow-dark.min.css">
   <link href="/dist/styles.css" rel="stylesheet">
 </head>
 <body>
@@ -18,6 +20,8 @@
   <script>
     var serverUrl = "<?=siteUrl()?>";
   </script>
+  
+
   <script src="/dist/app.js"></script>
   <?=$scripts?>
 </body>
