@@ -1,5 +1,5 @@
 <?php
 
 return [
-  "site_name" => "TonePHP Starter Kit"
+  "site_name" => "HI-EDDY"
 ];

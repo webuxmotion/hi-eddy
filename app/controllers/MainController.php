@@ -10,8 +10,8 @@ class MainController extends AppController {
     
        $this->setMeta(
            Tone::$app->getProperty('site_name'),
-           'TonePHP Starter KIT',
-           'TonePHP, starter kit'
+           'hi-eddy - це освітня платформа',
+           'hi-eddy, освітня платформа'
        );
     }
 }
