@@ -19,6 +19,7 @@
   
   <script>
     var serverUrl = "<?=siteUrl()?>";
+    const PATH = '<?= PATH ?>';
   </script>
   
 

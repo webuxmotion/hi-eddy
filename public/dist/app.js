@@ -16,7 +16,7 @@
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.scss */ \"./app/src/styles.scss\");\n/* harmony import */ var _hljs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./hljs.js */ \"./app/src/hljs.js\");\n\n\n\n\n\n//# sourceURL=webpack://starter-kit/./app/src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.scss */ \"./app/src/styles.scss\");\n/* harmony import */ var _hljs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./hljs.js */ \"./app/src/hljs.js\");\n\n\n\n\ndocument.getElementById('languages').addEventListener('click', (event) => {\n  let buttonElement = null;\n  if (event.target.classList.contains('dropdown-item')) {\n    buttonElement = event.target;\n  } else if (event.target.closest('.dropdown-item')) {\n    buttonElement = event.target.closest('.dropdown-item');\n  }\n\n  if (buttonElement) {\n    const lang_code = buttonElement.dataset.langcode;\n    window.location = PATH + '/language/change?lang=' + lang_code;\n  }\n});\n\n// $('#languages button').on('click', function () {\n//   const lang_code = $(this).data('langcode');\n//   window.location = PATH + '/language/change?lang=' + lang_code;\n// });\n\n\n//# sourceURL=webpack://starter-kit/./app/src/app.js?");
 
 /***/ }),
 
