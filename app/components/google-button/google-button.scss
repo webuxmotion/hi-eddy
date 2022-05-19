@@ -1,0 +1,28 @@
+.google-button {
+  background-color: white;
+  display: inline-flex;
+  align-items: center;
+  height: 70px;
+  border-radius: 22px;
+  color: #757575;
+  padding-right: 30px;
+  padding-left: 30px;
+  font-weight: bold;
+  font-size: 20px;
+  text-decoration: none;
+  box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    color: black;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  &__icon {
+    display: inline-block;
+
+    svg {
+      width: 30px;
+      margin-right: 10px;
+    }
+  }
+}

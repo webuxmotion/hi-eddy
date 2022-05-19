@@ -24,16 +24,25 @@
     </nav>
   </div>
   <div class="header__column">
-    <a href="<?=base_url()?>login" class="header__button">
-      <span class="header__button-icon"><?=icon('user-bold')?></span>
-      <span class="header__button-text">
-        <?=__('tpl_login')?>
-      </span>
-    </a>
-    <a href="<?=base_url()?>login" class="header__button">
-      <span class="header__button-text">
-        <?=__('tpl_registration')?>
-      </span>
-    </a>
+    <?php if (isUser()): ?>
+      <a href="<?=base_url()?>profile" class="header__button">
+        <span class="header__button-icon"><?=icon('user-bold')?></span>
+        <span class="header__button-text">
+          <?=__('tpl_profile')?>
+        </span>
+      </a>
+    <?php else: ?>
+      <a href="<?=base_url()?>login" class="header__button">
+        <span class="header__button-icon"><?=icon('user-bold')?></span>
+        <span class="header__button-text">
+          <?=__('tpl_login')?>
+        </span>
+      </a>
+      <a href="<?=base_url()?>login" class="header__button">
+        <span class="header__button-text">
+          <?=__('tpl_registration')?>
+        </span>
+      </a>
+    <?php endif; ?>
   </div>
 </div>

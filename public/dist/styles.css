@@ -221,3 +221,65 @@ code {
 .header__button-text {
   line-height: 10px;
 }
+
+.login {
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.login__title {
+  margin-bottom: 40px;
+}
+.login__description {
+  margin-bottom: 50px;
+  max-width: 700px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.message {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+.message__body {
+  font-size: 30px;
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 8px;
+  width: 500px;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.message__icon {
+  margin-bottom: 10px;
+}
+.message__icon svg {
+  width: 60px;
+}
+
+.google-button {
+  background-color: white;
+  display: inline-flex;
+  align-items: center;
+  height: 70px;
+  border-radius: 22px;
+  color: #757575;
+  padding-right: 30px;
+  padding-left: 30px;
+  font-weight: bold;
+  font-size: 20px;
+  text-decoration: none;
+  box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.1);
+}
+.google-button:hover {
+  color: black;
+  box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.1);
+}
+.google-button__icon {
+  display: inline-block;
+}
+.google-button__icon svg {
+  width: 30px;
+  margin-right: 10px;
+}

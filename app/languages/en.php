@@ -7,4 +7,5 @@ return [
     'tpl_contacts' => 'contacts',
     'tpl_login' => 'login',
     'tpl_registration' => 'registration',
+    'tpl_profile' => 'profile'
 ];

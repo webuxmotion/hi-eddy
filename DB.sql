@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: starter-kit-mysql-app:3306
--- Generation Time: May 18, 2022 at 08:05 PM
+-- Generation Time: May 19, 2022 at 04:56 PM
 -- Server version: 5.7.38
 -- PHP Version: 7.2.2
 
@@ -87,6 +87,25 @@ INSERT INTO `lesson_description` (`id`, `language_id`, `lesson_id`, `title`, `me
 (3, 1, 2, 'Завантажуємо редактор коду', 'Завантажуємо редактор коду', 'Редактор коду'),
 (4, 2, 2, 'Download code editor', 'Download code editor', 'Code editor');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `email` varchar(256) NOT NULL,
+  `firstName` varchar(256) DEFAULT NULL,
+  `lastName` varchar(256) DEFAULT NULL,
+  `phone` varchar(256) DEFAULT NULL,
+  `avatar` varchar(256) DEFAULT NULL,
+  `address` varchar(256) DEFAULT NULL,
+  `facebook` varchar(256) DEFAULT NULL,
+  `telegram` varchar(256) DEFAULT NULL,
+  `role` enum('admin','user') NOT NULL DEFAULT 'user'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 --
 -- Indexes for dumped tables
 --
@@ -110,6 +129,13 @@ ALTER TABLE `lesson_description`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -129,6 +155,12 @@ ALTER TABLE `lesson`
 -- AUTO_INCREMENT for table `lesson_description`
 --
 ALTER TABLE `lesson_description`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 

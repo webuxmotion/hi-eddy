@@ -11,6 +11,7 @@ Router::add('^(?P<lang>[a-z]+)?/?sponsors/?$', ['controller' => 'Pages', 'action
 Router::add('^(?P<lang>[a-z]+)?/?command/?$', ['controller' => 'Pages', 'action' => 'command']);
 
 Router::add('^(?P<lang>[a-z]+)?/?login/?$', ['controller' => 'User', 'action' => 'login']);
+Router::add('^(?P<lang>[a-z]+)?/?profile/?$', ['controller' => 'User', 'action' => 'profile']);
 
 Router::add('^(?P<lang>[a-z]+)?/?$', ['controller' => 'Main', 'action' => 'index']);
 

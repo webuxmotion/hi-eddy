@@ -59,3 +59,7 @@ function __($key)
 {
     return \app\services\LanguageService::get($key);
 }
+
+function isUser() {
+    return !empty($_SESSION['user']);
+}
