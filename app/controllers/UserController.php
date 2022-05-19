@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use core\Tone;
 use app\services\GoogleAuth;
+use app\services\Telegram;
 
 class UserController extends AppController {
 
@@ -28,6 +29,14 @@ class UserController extends AppController {
 
         GoogleAuth::run();
 
+        if (isUser()) {
+            Telegram::instance()
+                ->sendMessage(
+                    $_ENV['BOT_CHAT_ID'], 
+                    "User with email: {$_SESSION['user']['email']} was loginned!"
+                );
+        }
+
         $queryParamsString = '';
         $redirectTo = $_GET['redirectTo'] ?? null;
         if ($redirectTo) {
@@ -41,7 +50,9 @@ class UserController extends AppController {
     public function clickOnGoogleLoginButtonAction() {
         $redirectTo = $_GET['redirectTo'] ?? null;
         GoogleAuth::run();
+
         $google_login_url = GoogleAuth::$google_login_url;
+
         if ($redirectTo) {
             $_SESSION['redirectTo'] = $redirectTo;
         }

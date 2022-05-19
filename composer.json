@@ -2,6 +2,7 @@
     "name": "webuxmotion/hi-eddy",
     "require": {
         "tonephp/tonephp": "^0.1.10",
-        "google/apiclient": "^2.11"
+        "google/apiclient": "^2.11",
+        "telegram-bot/api": "^2.3"
     }
 }
