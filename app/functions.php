@@ -54,3 +54,8 @@ function base_url()
 {
     return PATH . (\core\Tone::$app->getProperty('lang') ? \core\Tone::$app->getProperty('lang') . '/' : '');
 }
+
+function __($key)
+{
+    return \app\services\LanguageService::get($key);
+}

@@ -1,0 +1,10 @@
+<?php
+
+return [
+    'tpl_about_academy' => 'about academy',
+    'tpl_sponsors' => 'sponsors',
+    'tpl_command' => 'command',
+    'tpl_contacts' => 'contacts',
+    'tpl_login' => 'login',
+    'tpl_registration' => 'registration',
+];

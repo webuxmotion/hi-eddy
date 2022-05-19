@@ -1,3 +1,3 @@
 <div class="p-tutorial">
-    <?php customRequire(APP . "/pages/Tutorials/{$alias}/index.php")?>
+    <?php customRequire(APP . "/pages/Tutorials/{$alias}/{$lang}/index.php")?>
 </div>

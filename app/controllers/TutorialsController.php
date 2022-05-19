@@ -13,26 +13,12 @@ class TutorialsController extends AppController {
 
     public function tutorialAction() {
         $alias = $this->route['alias'] ?? null;
-        $section = $this->route['section'] ?? null;
-
-        if (!$section) {
-
-            if (
-                $alias == 'coming-soon' ||
-                $alias == 'gatsby-prismic'
-            ) {
-                redirect("/tutorials/$alias/installation");
-            }
-            if ($alias == 'pick-colors') {
-                redirect("/tutorials/$alias/video-link");
-            }
-            
-        }
+        $lang = \core\Tone::$app->getProperty('language')['code'];
 
         $this->setMeta(
-            "Tutorial - $alias - $section"
+            "Tutorial - $alias"
         );
 
-        $this->set(compact('alias', 'section'));
+        $this->set(compact('alias', 'lang'));
      }
 }

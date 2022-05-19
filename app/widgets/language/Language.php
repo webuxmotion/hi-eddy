@@ -15,7 +15,7 @@ class Language
 
     public function __construct()
     {
-        $this->tpl = __DIR__ . '/lang_tpl.php';
+        $this->tpl = __DIR__ . '/components/languages/languages.php';
         $this->run();
     }
 
