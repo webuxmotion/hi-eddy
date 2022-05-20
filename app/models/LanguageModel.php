@@ -2,9 +2,7 @@
 
 namespace app\models;
 
-use core\base\Model;
-
-class LanguageModel extends Model
+class LanguageModel extends AppModel
 {
   public function getLanguages() {
     $sql = "SELECT code, title, base, id FROM language ORDER BY base DESC";

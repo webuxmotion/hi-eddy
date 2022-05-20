@@ -20,7 +20,14 @@ ul {
 }
 
 .debug {
-  color: #969692;
+  color: black;
+  position: relative;
+  z-index: 2022;
+  background-color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  padding: 20px;
+  border: 1px solid black;
+  overflow-y: auto;
 }
 
 code {

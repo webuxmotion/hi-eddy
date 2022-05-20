@@ -20,7 +20,14 @@ ul {
 }
 
 .debug {
-  color: #969692;
+  color: black;
+  position: relative;
+  z-index: 2022;
+  background-color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  padding: 20px;
+  border: 1px solid black;
+  overflow-y: auto;
 }
 
 code {
@@ -62,7 +69,7 @@ code {
   opacity: 0.8;
 }
 
-.p-tutorial {
+.p-one-item {
   padding-top: 50px;
   padding-right: 50px;
   padding-left: 50px;

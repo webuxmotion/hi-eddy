@@ -50,7 +50,7 @@ function post($key, $type = 's')
     }
 }
 
-function base_url()
+function baseUrl()
 {
     return PATH . (\core\Tone::$app->getProperty('lang') ? \core\Tone::$app->getProperty('lang') . '/' : '');
 }

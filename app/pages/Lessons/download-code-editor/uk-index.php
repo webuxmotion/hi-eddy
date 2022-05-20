@@ -1,0 +1,1 @@
+<p>Скачуємо та встановлюємо цей редактор коду <a href="<?=$code_editor_link?>" target="_blank">Visual Studio Code</a></p>

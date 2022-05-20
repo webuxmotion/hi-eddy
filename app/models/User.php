@@ -2,9 +2,7 @@
 
 namespace app\models;
 
-use core\base\Model;
-
-class User extends Model {
+class User extends AppModel {
 
     protected $table = 'user';
     
