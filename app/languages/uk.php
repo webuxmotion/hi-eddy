@@ -7,5 +7,7 @@ return [
     'tpl_contacts' => 'контакти',
     'tpl_login' => 'логін',
     'tpl_registration' => 'реєстрація',
-    'tpl_profile' => 'профіль'
+    'tpl_profile' => 'профіль',
+    'tpl_all_lessons' => 'всі уроки',
+    'tpl_prices' => 'ціни'
 ];

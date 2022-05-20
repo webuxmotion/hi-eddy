@@ -10,6 +10,8 @@ Router::add('^(?P<lang>[a-z]+)?/?contacts/?$', ['controller' => 'Pages', 'action
 Router::add('^(?P<lang>[a-z]+)?/?sponsors/?$', ['controller' => 'Pages', 'action' => 'sponsors']);
 Router::add('^(?P<lang>[a-z]+)?/?command/?$', ['controller' => 'Pages', 'action' => 'command']);
 
+Router::add('^(?P<lang>[a-z]+)?/?prices/?$', ['controller' => 'Prices', 'action' => 'list']);
+
 Router::add('^(?P<lang>[a-z]+)?/?lessons/?$', ['controller' => 'Lessons', 'action' => 'list']);
 
 Router::add('^(?P<lang>[a-z]+)?/?login/?$', ['controller' => 'User', 'action' => 'login']);
