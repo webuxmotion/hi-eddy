@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: starter-kit-mysql-app:3306
--- Generation Time: May 19, 2022 at 04:56 PM
+-- Generation Time: May 20, 2022 at 09:50 PM
 -- Server version: 5.7.38
 -- PHP Version: 7.2.2
 
@@ -90,6 +90,18 @@ INSERT INTO `lesson_description` (`id`, `language_id`, `lesson_id`, `title`, `me
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `lesson_pin`
+--
+
+CREATE TABLE `lesson_pin` (
+  `id` int(11) NOT NULL,
+  `lesson_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -129,6 +141,12 @@ ALTER TABLE `lesson_description`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `lesson_pin`
+--
+ALTER TABLE `lesson_pin`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -158,10 +176,16 @@ ALTER TABLE `lesson_description`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `lesson_pin`
+--
+ALTER TABLE `lesson_pin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+
+--
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use \app\models\LessonModel;
+use \app\models\LessonPinModel;
 use \core\Tone;
 
 class LessonsController extends AppController {
@@ -16,6 +17,12 @@ class LessonsController extends AppController {
         );
 
         $this->set(compact('list'));
+    }
+
+    public function togglePinAction() {
+        $pinModel = new LessonPinModel();
+        $pinModel->togglePin($this->route['id']);
+        redirect();
     }
 
     public function oneItemAction() {
