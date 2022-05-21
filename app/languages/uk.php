@@ -8,6 +8,8 @@ return [
     'tpl_login' => 'логін',
     'tpl_registration' => 'реєстрація',
     'tpl_profile' => 'профіль',
-    'tpl_all_lessons' => 'всі уроки',
-    'tpl_prices' => 'ціни'
+    'tpl_prices' => 'ціни',
+    'tpl_pinned_lessons' => 'Запінені уроки',
+    'tpl_done_lessons' => 'Завершені уроки',
+    'tpl_all_lessons' => 'Всі уроки',
 ];

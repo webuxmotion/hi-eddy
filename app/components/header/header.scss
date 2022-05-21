@@ -20,6 +20,7 @@
   &__nav-link {
     color: $secondary-color;
     text-decoration: none;
+    text-transform: lowercase;
   }
 
   &__button {

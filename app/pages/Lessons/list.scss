@@ -1,0 +1,16 @@
+.p-list {
+  &__title {
+    padding: 40px;
+    padding-bottom: 0;
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+
+  &__item {
+    padding: 20px;
+  }
+}

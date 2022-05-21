@@ -76,6 +76,19 @@ code {
   padding-bottom: 100px;
 }
 
+.p-list__title {
+  padding: 40px;
+  padding-bottom: 0;
+}
+.p-list__items {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.p-list__item {
+  padding: 20px;
+}
+
 .logo {
   transition: 0.3s;
   text-decoration: none;
@@ -94,9 +107,9 @@ code {
 
 .button {
   transition: 0.3s;
-  background-color: #00FF82;
+  background-color: #520096;
   text-decoration: none;
-  color: #520096;
+  color: white;
   padding: 20px;
   cursor: pointer;
   font-size: 20px;
@@ -106,10 +119,10 @@ code {
   transform: translateY(-1px);
 }
 .button:hover {
-  background-color: #33ff9b;
+  background-color: #6e00c9;
 }
 .button:active {
-  background-color: #00FF82;
+  background-color: #520096;
 }
 
 .hero {
@@ -204,6 +217,7 @@ code {
 .header__nav-link {
   color: #520096;
   text-decoration: none;
+  text-transform: lowercase;
 }
 .header__button {
   background-color: #520096;
@@ -242,6 +256,38 @@ code {
   max-width: 700px;
   margin-right: auto;
   margin-left: auto;
+}
+
+.lesson-card {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  border-radius: 20px;
+  background-color: #E9E9E9;
+  display: inline-flex;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #520096;
+  font-size: 20px;
+}
+.lesson-card:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.lesson-card__icon {
+  position: absolute;
+  top: 20px;
+}
+.lesson-card__icon--pin {
+  left: 20px;
+}
+.lesson-card__icon--done {
+  right: 20px;
+}
+.lesson-card__icon svg {
+  width: 40px;
+  height: auto;
 }
 
 .message {

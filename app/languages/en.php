@@ -8,6 +8,8 @@ return [
     'tpl_login' => 'login',
     'tpl_registration' => 'registration',
     'tpl_profile' => 'profile',
-    'tpl_all_lessons' => 'all lessons',
-    'tpl_prices' => 'prices'
+    'tpl_prices' => 'prices',
+    'tpl_pinned_lessons' => 'Pinned lessons',
+    'tpl_done_lessons' => 'Finished lessons',
+    'tpl_all_lessons' => 'All lessons',
 ];

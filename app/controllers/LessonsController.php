@@ -13,11 +13,14 @@ class LessonsController extends AppController {
         $model = new LessonModel();
         $list = $model->getList();
 
+        $pinnedMode = get('pinned', 'bool');
+        $doneMode = get('done', 'bool');
+
         $this->setMeta(
            "Lessons Page"
         );
 
-        $this->set(compact('list'));
+        $this->set(compact('list', 'pinnedMode', 'doneMode'));
     }
 
     public function togglePinAction() {
