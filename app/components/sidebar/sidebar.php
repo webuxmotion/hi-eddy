@@ -9,7 +9,7 @@
     <a href="<?=baseUrl()?>lessons?pinned=true" class="sidebar__control">
       <?=icon('pin')?>
     </a>
-    <a href="<?=baseUrl()?>" class="sidebar__control">
+    <a href="<?=baseUrl()?>lessons?done=true" class="sidebar__control">
       <?=icon('done')?>
     </a>
     <a href="<?=baseUrl()?>" class="sidebar__control">

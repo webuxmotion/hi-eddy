@@ -10,10 +10,15 @@ class LessonModel extends AppModel
     $langId = \core\Tone::$app->getProperty('language')['id'];
     $userId = $_SESSION['user']['id'] ?? null;
     $showPinned = get('pinned', 'bool');
+    $showDone = get('done', 'bool');
     
     if ($userId && $showPinned) {
       $sql = "
-        SELECT l.slug, ld.title, lpin.id as has_pin FROM {$this->table} l
+        SELECT 
+          l.slug, 
+          ld.title, 
+          lpin.id as has_pin 
+        FROM {$this->table} l
         JOIN lesson_description ld
           ON l.id = ld.lesson_id
         JOIN lesson_pin lpin
@@ -21,9 +26,26 @@ class LessonModel extends AppModel
           AND {$userId} = lpin.user_id
         WHERE ld.language_id = ?
       ";
+    } else if ($userId && $showDone) {
+      $sql = "
+        SELECT 
+          l.slug, 
+          ld.title, 
+          ldone.id as has_done
+        FROM {$this->table} l
+        JOIN lesson_description ld
+          ON l.id = ld.lesson_id
+        JOIN lesson_done ldone
+          ON l.id = ldone.lesson_id
+          AND {$userId} = ldone.user_id
+        WHERE ld.language_id = ?
+      ";
     } else {
       $sql = "
-        SELECT l.slug, ld.title FROM {$this->table} l
+        SELECT 
+          l.slug, 
+          ld.title 
+        FROM {$this->table} l
         JOIN lesson_description ld
         ON l.id = ld.lesson_id
         WHERE ld.language_id = ?
@@ -46,13 +68,17 @@ class LessonModel extends AppModel
         ld.title,
         ld.meta_description,
         ld.meta_keywords,
-        lpin.id as has_pin
+        lpin.id as has_pin,
+        ldone.id as has_done
       FROM {$this->table} l
       JOIN lesson_description ld
       ON l.id = ld.lesson_id
       LEFT JOIN lesson_pin lpin
-      ON l.id = lpin.lesson_id
-      AND {$userId} = lpin.user_id
+        ON l.id = lpin.lesson_id
+        AND {$userId} = lpin.user_id
+      LEFT JOIN lesson_done ldone
+        ON l.id = ldone.lesson_id
+        AND {$userId} = ldone.user_id
       WHERE l.slug = ?
       AND ld.language_id = ?
     ";

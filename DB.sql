@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: starter-kit-mysql-app:3306
--- Generation Time: May 20, 2022 at 09:50 PM
+-- Generation Time: May 21, 2022 at 08:06 AM
 -- Server version: 5.7.38
 -- PHP Version: 7.2.2
 
@@ -90,6 +90,18 @@ INSERT INTO `lesson_description` (`id`, `language_id`, `lesson_id`, `title`, `me
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `lesson_done`
+--
+
+CREATE TABLE `lesson_done` (
+  `id` int(11) NOT NULL,
+  `lesson_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `lesson_pin`
 --
 
@@ -141,6 +153,12 @@ ALTER TABLE `lesson_description`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `lesson_done`
+--
+ALTER TABLE `lesson_done`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `lesson_pin`
 --
 ALTER TABLE `lesson_pin`
@@ -176,16 +194,22 @@ ALTER TABLE `lesson_description`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `lesson_done`
+--
+ALTER TABLE `lesson_done`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `lesson_pin`
 --
 ALTER TABLE `lesson_pin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

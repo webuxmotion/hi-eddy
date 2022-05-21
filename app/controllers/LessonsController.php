@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use \app\models\LessonModel;
 use \app\models\LessonPinModel;
+use \app\models\LessonDoneModel;
 use \core\Tone;
 
 class LessonsController extends AppController {
@@ -25,6 +26,12 @@ class LessonsController extends AppController {
         redirect();
     }
 
+    public function toggleDoneAction() {
+        $doneModel = new LessonDoneModel();
+        $doneModel->toggleDone($this->route['id']);
+        redirect();
+    }
+
     public function oneItemAction() {
         $alias = $this->route['alias'] ?? null;
         $lang = Tone::$app->getProperty('language')['code'];
@@ -34,14 +41,19 @@ class LessonsController extends AppController {
 
         ob_start();
         $vars = [];
-        if (file_exists(APP . "/pages/Lessons/{$alias}/constants.php")) {
-            $vars = require APP . "/pages/Lessons/{$alias}/constants.php";
+        
+        $lessonFolder = APP . "/pages/Lessons/{$alias}/";
+        $constantsFile = $lessonFolder . "constants.php";
+        $lessonFile = $lessonFolder . "{$lang}-index.php";
+
+        if (file_exists($constantsFile)) {
+            $vars = require $constantsFile;
         }
         
         extract($vars);
         
-        if (file_exists(APP . "/pages/Lessons/{$alias}/{$lang}-index.php")) {
-            require APP . "/pages/Lessons/{$alias}/{$lang}-index.php";
+        if (file_exists($lessonFile)) {
+            require $lessonFile;
         } else {
             require APP . "/pages/Lessons/not-found-lesson.php";
         }
