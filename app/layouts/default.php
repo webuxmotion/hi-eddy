@@ -6,6 +6,11 @@
   <meta name="author" content="Your Name">
   <?=$this::getMeta(); ?>
   <link rel="icon" type="image/png" href="/favicon.png" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;500;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet"
       href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/styles/stackoverflow-dark.min.css">
   <link href="/dist/styles.css" rel="stylesheet">
