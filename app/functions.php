@@ -10,13 +10,19 @@ function customRequire($path) {
     }
 }
 
-function doc($file) {
+function doc($fileName, $vars = ['lang' => 'php', 'alias' => '']) {
+    $file = "/pages/Lessons/{$vars['alias']}/files/{$fileName}";
+
     $fileContent = file_get_contents(APP . $file);
     $fileContent = str_replace('<', '&lt;', $fileContent);
     $fileContent = str_replace('>', '&gt;', $fileContent);
     $fileContent = str_replace('?', '&#63;', $fileContent);
-    
-    return $fileContent;
+
+    $res = "<pre><code class=\"language-{$vars['lang']}\">";
+    $res .= $fileContent;
+    $res .= "</code></pre>";
+
+    return $res;
 }
 
 function get($key, $type = 'i')

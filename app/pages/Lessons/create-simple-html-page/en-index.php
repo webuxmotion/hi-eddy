@@ -3,10 +3,7 @@
 <p>2. In folder my-site create file index.html</p>
 
 <p>3. Insert this code into file index.html:</p>
-<pre>
-  <code class="language-php">
-<?=doc('/pages/Lessons/create-simple-html-page/files/index.html')?>
-  </code>
-</pre>
+
+<?=$get_simple_html_code($alias)?>
 
 <p>4. Open file index.html in browser</p>
