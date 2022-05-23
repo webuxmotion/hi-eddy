@@ -12,16 +12,16 @@ Username: user<br>
 Password: password
 </p>
 
-<img src="/lessons/<?=$alias?>/php-my-admin-1.png">
+<img src="/lessons-images/<?=$alias?>/php-my-admin-1.png">
 
 <p>1.2 - Import database DB.sql</p>
 
-<img src="/lessons/<?=$alias?>/php-my-admin-2.png">
-<img src="/lessons/<?=$alias?>/php-my-admin-3.png">
-<img src="/lessons/<?=$alias?>/php-my-admin-4.png">
-<img src="/lessons/<?=$alias?>/php-my-admin-5.png">
-<img src="/lessons/<?=$alias?>/php-my-admin-6.png">
-<img src="/lessons/<?=$alias?>/php-my-admin-7.png">
+<img src="/lessons-images/<?=$alias?>/php-my-admin-2.png">
+<img src="/lessons-images/<?=$alias?>/php-my-admin-3.png">
+<img src="/lessons-images/<?=$alias?>/php-my-admin-4.png">
+<img src="/lessons-images/<?=$alias?>/php-my-admin-5.png">
+<img src="/lessons-images/<?=$alias?>/php-my-admin-6.png">
+<img src="/lessons-images/<?=$alias?>/php-my-admin-7.png">
 
 <h2>2. Start webpack</h2>
 
