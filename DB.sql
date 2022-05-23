@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: starter-kit-mysql-app:3306
--- Generation Time: May 21, 2022 at 08:06 AM
+-- Generation Time: May 23, 2022 at 06:34 AM
 -- Server version: 5.7.38
 -- PHP Version: 7.2.2
 
@@ -60,7 +60,8 @@ CREATE TABLE `lesson` (
 
 INSERT INTO `lesson` (`id`, `slug`) VALUES
 (1, 'create-simple-html-page'),
-(2, 'download-code-editor');
+(2, 'download-code-editor'),
+(3, 'start-project-hi-eddy');
 
 -- --------------------------------------------------------
 
@@ -85,7 +86,9 @@ INSERT INTO `lesson_description` (`id`, `language_id`, `lesson_id`, `title`, `me
 (1, 1, 1, 'Створюємо просту web-сторінку', 'Створюємо просту web-сторінку', 'Проста web-сторінка'),
 (2, 2, 1, 'Create simple web-page', 'Create simple web-page', 'Simple web-page'),
 (3, 1, 2, 'Завантажуємо редактор коду', 'Завантажуємо редактор коду', 'Редактор коду'),
-(4, 2, 2, 'Download code editor', 'Download code editor', 'Code editor');
+(4, 2, 2, 'Download code editor', 'Download code editor', 'Code editor'),
+(5, 1, 3, 'Запускаємо проект HI-EDDY', 'Запускаємо проект HI-EDDY', 'hi-eddy, Запускаємо проект'),
+(6, 2, 3, 'Start project HI-EDDY', 'Start project HI-EDDY', 'Start project, HI-EDDY');
 
 -- --------------------------------------------------------
 
@@ -185,31 +188,31 @@ ALTER TABLE `language`
 -- AUTO_INCREMENT for table `lesson`
 --
 ALTER TABLE `lesson`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `lesson_description`
 --
 ALTER TABLE `lesson_description`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `lesson_done`
 --
 ALTER TABLE `lesson_done`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `lesson_pin`
 --
 ALTER TABLE `lesson_pin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
