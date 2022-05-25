@@ -12,4 +12,5 @@ return [
     'tpl_pinned_lessons' => 'Запінені уроки',
     'tpl_done_lessons' => 'Завершені уроки',
     'tpl_all_lessons' => 'Всі уроки',
+    'tpl_to_main_page' => 'На головну сторінку',
 ];

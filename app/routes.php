@@ -20,7 +20,10 @@ Router::add('^(?P<lang>[a-z]{2}+)?/?profile/?$', ['controller' => 'User', 'actio
 
 Router::add('^(?P<lang>[a-z]{2}+)?/?docs/?$', ['controller' => 'Docs', 'action' => 'index']);
 
+Router::add('^(?P<lang>[a-z]{2}+)?/(?P<controller>[a-z-]+)?/(?P<action>[a-z-]+)?$');
 Router::add('^(?P<lang>[a-z]{2}+)?/?$', ['controller' => 'Main', 'action' => 'index']);
+
+
 
 // custom route here
 // ...

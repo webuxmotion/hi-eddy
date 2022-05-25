@@ -6,7 +6,8 @@
           <?=__('tpl_all_lessons')?>
         </a>
       </div>
-      <div class="header__nav-item">
+
+      <!-- <div class="header__nav-item">
         <a href="<?=baseUrl()?>prices" class="header__nav-link">
           <?=__('tpl_prices')?>
         </a>
@@ -20,7 +21,8 @@
         <a href="<?=baseUrl()?>contacts" class="header__nav-link">
           <?=__('tpl_contacts')?>
         </a>
-      </div>
+      </div> -->
+
     </nav>
   </div>
   <div class="header__column">
@@ -32,13 +34,13 @@
         </span>
       </a>
     <?php else: ?>
-      <a href="<?=baseUrl()?>login" class="header__button">
+      <a href="<?=baseUrl()?>login?redirectTo=profile" class="header__button">
         <span class="header__button-icon"><?=icon('user-bold')?></span>
         <span class="header__button-text">
           <?=__('tpl_login')?>
         </span>
       </a>
-      <a href="<?=baseUrl()?>login" class="header__button">
+      <a href="<?=baseUrl()?>login?redirectTo=profile" class="header__button">
         <span class="header__button-text">
           <?=__('tpl_registration')?>
         </span>

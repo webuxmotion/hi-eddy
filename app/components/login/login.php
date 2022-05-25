@@ -1,17 +1,19 @@
 <div class="login">
   <?php if (isUser()): ?>
     <?=$this->component('button', [
-      'href' => '/',
-      'title' => 'На главную',
+      'href' => baseUrl(),
+      'title' => __('tpl_to_main_page'),
     ])?>
   <?php else: ?>
-    <h2 class="login__title">Вхід на сайт</h2>
+    <h2 class="login__title">
+      <?=__('user_login_enter_to_site')?>
+    </h2>
     <p class="login__description">
-    Авторизуйтесь за допомогою Google,
-  щоб мати можливість додавати уроки в “Запінені”
+      <?=__('user_login_authorize_with_google_text')?>
     </p>
     <?=$this->component('google-button', [
-      'href' => $href
+      'href' => $href,
+      'text' => __('user_login_continue_with_google')
     ])?>
   <?php endif; ?>
 </div>

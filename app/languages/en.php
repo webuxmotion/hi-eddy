@@ -12,4 +12,5 @@ return [
     'tpl_pinned_lessons' => 'Pinned lessons',
     'tpl_done_lessons' => 'Finished lessons',
     'tpl_all_lessons' => 'All lessons',
+    'tpl_to_main_page' => 'To main page',
 ];

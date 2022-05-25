@@ -4,7 +4,6 @@ namespace app\controllers;
 
 use core\Tone;
 use app\services\GoogleAuth;
-use app\services\Telegram;
 
 class UserController extends AppController {
 
@@ -21,28 +20,23 @@ class UserController extends AppController {
     }
     
     public function loginAction() {
+        $lang = Tone::$app->getProperty('lang');
+        $lang = $lang ? '/' . $lang : '';
+        
         $this->setMeta(
-            'Вход на сайт - ' . Tone::$app->getProperty('site_name'),
+            __('user_login_enter_to_site') . ' - ' . Tone::$app->getProperty('site_name'),
             'Login page. HI-EDDY Academy',
             'hi-eddy, academy, education'
         );
 
         GoogleAuth::run();
 
-        if (isUser()) {
-            Telegram::instance()
-                ->sendMessage(
-                    $_ENV['BOT_CHAT_ID'], 
-                    "User with email: {$_SESSION['user']['email']} was loginned!"
-                );
-        }
-
         $queryParamsString = '';
         $redirectTo = $_GET['redirectTo'] ?? null;
         if ($redirectTo) {
             $queryParamsString .= '?redirectTo=' . $redirectTo;
         }
-        $google_login_url = '/user/click-on-google-login-button' . $queryParamsString;
+        $google_login_url = $lang . '/user/click-on-google-login-button' . $queryParamsString;
 
         $this->set(compact('google_login_url'));
     }
@@ -61,6 +55,6 @@ class UserController extends AppController {
 
     public function logoutAction() {
         unset($_SESSION['user']);
-        redirect(siteUrl());
+        redirect(baseUrl());
     }
 }

@@ -349,6 +349,7 @@ code {
 .message {
   padding-top: 20px;
   padding-bottom: 10px;
+  padding-right: 100px;
 }
 .message__body {
   font-size: 30px;

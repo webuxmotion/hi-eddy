@@ -3,6 +3,6 @@
         <?=icon('google-icon')?>
     </span>
     <span class="google-button__text">
-        Продовжити  з Google
+        <?=$text?>
     </span>
 </a>

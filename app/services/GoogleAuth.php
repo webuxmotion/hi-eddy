@@ -3,9 +3,11 @@
 namespace app\services;
 
 use app\models\User;
+use app\services\Telegram;
 use core\Tone;
 use Google\Client;
 use Google\Service\Oauth2;
+
 
 class GoogleAuth {
     public static $google_login_url;
@@ -46,6 +48,14 @@ class GoogleAuth {
             }
             $redirectTo = $_SESSION['redirectTo'] ?? null;
             unset($_SESSION['redirectTo']);
+
+            if (isUser()) {
+                Telegram::instance()
+                    ->sendMessage(
+                        $_ENV['BOT_CHAT_ID'], 
+                        "User with email: {$_SESSION['user']['email']} was loginned!"
+                    );
+            }
             
             if ($redirectTo) {
                 redirect($redirectTo);
