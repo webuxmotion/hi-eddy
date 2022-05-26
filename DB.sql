@@ -2,8 +2,8 @@
 -- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
--- Host: starter-kit-mysql-app:3306
--- Generation Time: May 23, 2022 at 06:34 AM
+-- Host: hi-eddy-mysql-app:3306
+-- Generation Time: May 26, 2022 at 10:55 AM
 -- Server version: 5.7.38
 -- PHP Version: 7.2.2
 
@@ -61,7 +61,8 @@ CREATE TABLE `lesson` (
 INSERT INTO `lesson` (`id`, `slug`) VALUES
 (1, 'create-simple-html-page'),
 (2, 'download-code-editor'),
-(3, 'start-project-hi-eddy');
+(3, 'start-project-hi-eddy'),
+(4, 'main-tags-html');
 
 -- --------------------------------------------------------
 
@@ -88,7 +89,9 @@ INSERT INTO `lesson_description` (`id`, `language_id`, `lesson_id`, `title`, `me
 (3, 1, 2, 'Завантажуємо редактор коду', 'Завантажуємо редактор коду', 'Редактор коду'),
 (4, 2, 2, 'Download code editor', 'Download code editor', 'Code editor'),
 (5, 1, 3, 'Запускаємо проект HI-EDDY', 'Запускаємо проект HI-EDDY', 'hi-eddy, Запускаємо проект'),
-(6, 2, 3, 'Start project HI-EDDY', 'Start project HI-EDDY', 'Start project, HI-EDDY');
+(6, 2, 3, 'Start project HI-EDDY', 'Start project HI-EDDY', 'Start project, HI-EDDY'),
+(7, 1, 4, 'Додаємо теги, які найчастіше використовуються', 'Додаємо теги, які найчастіше використовуються', 'теги html'),
+(8, 2, 4, 'Most useful tags in html', 'Most useful tags in html', 'useful tags, html, hi-eddy, hieddy');
 
 -- --------------------------------------------------------
 
@@ -188,31 +191,31 @@ ALTER TABLE `language`
 -- AUTO_INCREMENT for table `lesson`
 --
 ALTER TABLE `lesson`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `lesson_description`
 --
 ALTER TABLE `lesson_description`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `lesson_done`
 --
 ALTER TABLE `lesson_done`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `lesson_pin`
 --
 ALTER TABLE `lesson_pin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
