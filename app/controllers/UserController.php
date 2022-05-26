@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use core\Tone;
 use app\services\GoogleAuth;
+use app\models\UserModel;
 
 class UserController extends AppController {
 
@@ -56,5 +57,20 @@ class UserController extends AppController {
     public function logoutAction() {
         unset($_SESSION['user']);
         redirect(baseUrl());
+    }
+
+    public function updateAction() {
+        if (!empty($_POST)) {
+            $data = $_POST;
+        
+            $user_model = new UserModel();
+            $isUpdated = $user_model->updateProfile($data);
+
+            if ($isUpdated) {
+                $_SESSION['success'] = "Профіль збережено";
+            }
+        }
+        
+        redirect();
     }
 }

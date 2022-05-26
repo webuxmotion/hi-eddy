@@ -13,4 +13,9 @@ return [
     'tpl_done_lessons' => 'Завершені уроки',
     'tpl_all_lessons' => 'Всі уроки',
     'tpl_to_main_page' => 'На головну сторінку',
+    'tpl_logout' => 'Вийти',
+    'tpl_save' => 'Зберегти',
+    'tpl_first_name' => 'Ім’я',
+    'tpl_last_name' => 'Прізвище',
+    'tpl_phone' => 'Телефон',
 ];

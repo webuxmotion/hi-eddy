@@ -63,9 +63,17 @@ function baseUrl()
 
 function __($key)
 {
-    return \app\services\LanguageService::get($key);
+    $string = \app\services\LanguageService::get($key);
+
+    return $string;
 }
 
 function isUser() {
     return !empty($_SESSION['user']);
+}
+
+function upperFirst($str) {
+    $fc = mb_strtoupper(mb_substr($str, 0, 1));
+
+    return $fc.mb_substr($str, 1);
 }

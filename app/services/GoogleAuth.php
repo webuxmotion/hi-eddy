@@ -2,7 +2,7 @@
 
 namespace app\services;
 
-use app\models\User;
+use app\models\UserModel;
 use app\services\Telegram;
 use core\Tone;
 use Google\Client;
@@ -40,7 +40,7 @@ class GoogleAuth {
                     'lastName' => $userData['familyName'],
                 ];
 
-                $user_model = new User();
+                $user_model = new UserModel();
                 $user_model->saveGoogleUser($data);
                 $_SESSION['success'] = "You is loginned!";
             } else {
