@@ -77,3 +77,11 @@ function upperFirst($str) {
 
     return $fc.mb_substr($str, 1);
 }
+
+function codeTheme() {
+    $theme = 'stackoverflow-dark';
+    $theme = 'default';
+    //$theme = 'github-dark-dimmed';
+
+    return $theme;
+}
