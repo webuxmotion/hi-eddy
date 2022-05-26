@@ -79,6 +79,7 @@ function upperFirst($str) {
 }
 
 function codeTheme() {
+    // https://cdnjs.com/libraries/highlight.js
     $theme = 'stackoverflow-dark';
     $theme = 'default';
     //$theme = 'github-dark-dimmed';
