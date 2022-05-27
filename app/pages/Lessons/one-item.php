@@ -1,4 +1,4 @@
-<div class="p-one-item">
+<div class="p-one-item js-one-item-page">
     <?php if (isUser()): ?>
         <?=$item['has_pin'] ? 'PINNED' : ''?>
         <a href="/lessons/toggle-pin/<?=$item['id']?>">

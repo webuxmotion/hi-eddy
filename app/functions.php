@@ -9,6 +9,13 @@ function customRequire($path) {
         echo "Page not found";
     }
 }
+function image($fileName, $vars = ['alias' => '']) {
+    $res = "<div>";
+    $res .= "<img src=\"/images-tuts/{$vars['alias']}/{$fileName}\">";
+    $res .= "</div>";
+    
+    return $res;
+}
 
 function doc($fileName, $vars = ['lang' => 'php', 'alias' => '']) {
     $file = "/pages/Lessons/{$vars['alias']}/files/{$fileName}";
