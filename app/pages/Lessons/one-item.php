@@ -13,3 +13,5 @@
     <h1><?=$item['title']?></h1>
     <?=$content?>
 </div>
+
+<?=$this->component('go-top-button')?>

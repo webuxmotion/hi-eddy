@@ -465,3 +465,31 @@ code {
   width: 30px;
   margin-right: 10px;
 }
+
+.go-top-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: #520096;
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  cursor: pointer;
+  opacity: 0.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+.go-top-button:hover {
+  transform: translateY(-1px);
+}
+.go-top-button:hover {
+  opacity: 1;
+}
+.go-top-button svg {
+  transform: rotate(-90deg);
+}
+.go-top-button svg path {
+  fill: white;
+}

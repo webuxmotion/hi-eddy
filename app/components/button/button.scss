@@ -1,7 +1,7 @@
 .button {
   @include hoverEffect;
   
-  background-color: $secondary-color;
+  background-color: $primary-color;
   text-decoration: none;
   color: white;
   padding: 14px 60px;
@@ -16,10 +16,10 @@
   border-radius: 10px;
 
   &:hover {
-    background-color: lighten($secondary-color, 10%);
+    background-color: lighten($primary-color, 10%);
   }
 
   &:active {
-    background-color: $secondary-color;
+    background-color: $primary-color;
   }
 }

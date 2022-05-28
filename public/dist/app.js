@@ -9,6 +9,16 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./app/components/go-top-button/go-top-button.js":
+/*!*******************************************************!*\
+  !*** ./app/components/go-top-button/go-top-button.js ***!
+  \*******************************************************/
+/***/ (() => {
+
+eval("const element = document.querySelector('.js-go-top-button');\n\nif (element) {\n    element.addEventListener('click', () => {\n        window.scrollTo({ top: 0 });\n    });\n}\n\n//# sourceURL=webpack://starter-kit/./app/components/go-top-button/go-top-button.js?");
+
+/***/ }),
+
 /***/ "./app/pages/Lessons/one-item.js":
 /*!***************************************!*\
   !*** ./app/pages/Lessons/one-item.js ***!
@@ -26,7 +36,7 @@ eval("const page = document.querySelector('.js-one-item-page');\n\nif (page) {\n
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.scss */ \"./app/src/styles.scss\");\n/* harmony import */ var _hljs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./hljs.js */ \"./app/src/hljs.js\");\n/* harmony import */ var _pages_Lessons_one_item__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages/Lessons/one-item */ \"./app/pages/Lessons/one-item.js\");\n/* harmony import */ var _pages_Lessons_one_item__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_pages_Lessons_one_item__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _widgets_language_components_languages_languages__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../widgets/language/components/languages/languages */ \"./app/widgets/language/components/languages/languages.js\");\n/* harmony import */ var _widgets_language_components_languages_languages__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_widgets_language_components_languages_languages__WEBPACK_IMPORTED_MODULE_3__);\n\n\n\n\n\n\n\n//# sourceURL=webpack://starter-kit/./app/src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.scss */ \"./app/src/styles.scss\");\n/* harmony import */ var _hljs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./hljs.js */ \"./app/src/hljs.js\");\n/* harmony import */ var _components_go_top_button_go_top_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/go-top-button/go-top-button */ \"./app/components/go-top-button/go-top-button.js\");\n/* harmony import */ var _components_go_top_button_go_top_button__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_go_top_button_go_top_button__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _pages_Lessons_one_item__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/Lessons/one-item */ \"./app/pages/Lessons/one-item.js\");\n/* harmony import */ var _pages_Lessons_one_item__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_pages_Lessons_one_item__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _widgets_language_components_languages_languages__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../widgets/language/components/languages/languages */ \"./app/widgets/language/components/languages/languages.js\");\n/* harmony import */ var _widgets_language_components_languages_languages__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_widgets_language_components_languages_languages__WEBPACK_IMPORTED_MODULE_4__);\n\n\n\n\n\n\n\n\n\n\n//# sourceURL=webpack://starter-kit/./app/src/app.js?");
 
 /***/ }),
 
