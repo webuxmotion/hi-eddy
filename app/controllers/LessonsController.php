@@ -2,10 +2,12 @@
 
 namespace app\controllers;
 
+use \core\Tone;
 use \app\models\LessonModel;
 use \app\models\LessonPinModel;
 use \app\models\LessonDoneModel;
-use \core\Tone;
+use \app\services\Telegram;
+
 
 class LessonsController extends AppController {
     
@@ -38,6 +40,19 @@ class LessonsController extends AppController {
     public function oneItemAction() {
         $alias = $this->route['alias'] ?? null;
         $lang = Tone::$app->getProperty('language')['code'];
+        $fbclid = get('fbclid', 'string');
+
+        if ($fbclid) {
+            Telegram::instance()
+                ->sendMessage(
+                    $_ENV['BOT_CHAT_ID'], 
+                    "Someone with fbclid: 
+                    \n{$fbclid} 
+                    clicked the link. 
+                    \nAlias: 
+                    \n{$alias}"
+                );
+        }
 
         $model = new LessonModel();
         $item = $model->getOneByAlias($alias);
