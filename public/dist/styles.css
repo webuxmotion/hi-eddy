@@ -119,6 +119,18 @@ code {
 .p-list__item {
   padding: 20px;
 }
+@media screen and (max-width: 900px) {
+  .p-list__title {
+    padding: 10px;
+  }
+  .p-list__items {
+    padding: 10px;
+  }
+  .p-list__item {
+    padding: 10px 0;
+    width: 100%;
+  }
+}
 
 .p-profile {
   padding-top: 55px;
@@ -259,6 +271,15 @@ code {
   background-repeat: no-repeat;
   z-index: 11;
 }
+@media screen and (max-width: 900px) {
+  .hero {
+    padding-right: 0;
+    padding-left: 10px;
+  }
+  .hero__content {
+    min-width: 100%;
+  }
+}
 
 .sidebar {
   width: 125px;
@@ -277,7 +298,7 @@ code {
 }
 @media screen and (max-width: 900px) {
   .sidebar {
-    width: 80px;
+    width: 50px;
   }
 }
 .sidebar__column {
@@ -305,7 +326,7 @@ code {
 }
 @media screen and (max-width: 900px) {
   .content {
-    padding-left: 80px;
+    padding-left: 50px;
   }
 }
 
@@ -317,12 +338,6 @@ code {
   min-height: 62px;
   padding-right: 50px;
   padding-left: 50px;
-}
-@media screen and (max-width: 900px) {
-  .header {
-    padding-right: 10px;
-    padding-left: 10px;
-  }
 }
 .header__nav {
   display: flex;
@@ -360,6 +375,16 @@ code {
 }
 .header__button-text {
   line-height: 10px;
+}
+@media screen and (max-width: 900px) {
+  .header {
+    padding-right: 10px;
+    padding-left: 10px;
+    flex-wrap: wrap;
+  }
+  .header__button {
+    margin-left: 0;
+  }
 }
 
 .input {
@@ -445,6 +470,11 @@ code {
 .lesson-card__icon svg {
   width: 40px;
   height: auto;
+}
+@media screen and (max-width: 900px) {
+  .lesson-card {
+    width: 100%;
+  }
 }
 
 .message {

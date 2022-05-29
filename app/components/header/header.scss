@@ -7,12 +7,6 @@
   padding-right: 50px;
   padding-left: 50px;
 
-  @include media('mobile') {
-    padding-right: 10px;
-    padding-left: 10px;
-  }
-
-
   &__nav {
     display: flex;
     flex-wrap: wrap;
@@ -55,5 +49,15 @@
 
   &__button-text {
     line-height: 10px;
+  }
+
+  @include media('mobile') {
+    padding-right: 10px;
+    padding-left: 10px;
+    flex-wrap: wrap;
+
+    &__button {
+      margin-left: 0;
+    }
   }
 }
