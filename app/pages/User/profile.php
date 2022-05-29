@@ -3,9 +3,17 @@
   <h1 class="p-profile__title">
     <?=upperFirst(__('tpl_profile'))?>
   </h1>
+
+  <?php if (isAdmin()): ?>
+    <a href="<?=PATH?>admin">
+      Admin panel
+    </a>
+  <?php endif; ?>
+  
   <a href="<?=baseUrl()?>user/logout">
     <?=__('tpl_logout')?>
   </a>
+
   <form method="POST" action="/user/update">
     <h2 class="p-profile__section-title">
       <?=__('user_profile_main_information')?>

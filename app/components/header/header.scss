@@ -7,6 +7,12 @@
   padding-right: 50px;
   padding-left: 50px;
 
+  @include media('mobile') {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+
   &__nav {
     display: flex;
     flex-wrap: wrap;
@@ -21,6 +27,7 @@
     color: $primary-color;
     text-decoration: none;
     text-transform: lowercase;
+    white-space: nowrap;
   }
 
   &__button {

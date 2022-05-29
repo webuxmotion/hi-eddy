@@ -79,6 +79,12 @@ function isUser() {
     return !empty($_SESSION['user']);
 }
 
+function isAdmin() {
+    return !empty($_SESSION['user']) 
+        && !empty($_SESSION['user']['role'])
+        && $_SESSION['user']['role'] == 'admin';
+}
+
 function upperFirst($str) {
     $fc = mb_strtoupper(mb_substr($str, 0, 1));
 
