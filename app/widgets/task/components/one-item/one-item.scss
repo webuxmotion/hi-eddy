@@ -1,0 +1,38 @@
+.w-task-one-item {
+  padding: 20px;
+  label {
+    cursor: pointer;
+  }
+
+  &__answer {
+    cursor: pointer;
+    
+    &.is-wrong {
+      border: 2px solid red;
+    }
+
+    &.is-success {
+      border: 2px solid green;
+    }
+  }
+
+  &__question-image {
+    border-radius: 10px;
+    width: 300px;
+  }
+
+  &__answer-image {
+    border-radius: 10px;
+    width: 250px;
+  }
+
+  &__answers-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__button {
+    padding: 20px 40px;
+    cursor: pointer;
+  }
+}

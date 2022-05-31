@@ -69,6 +69,38 @@ code {
   opacity: 0.8;
 }
 
+.w-task-one-item {
+  padding: 20px;
+}
+.w-task-one-item label {
+  cursor: pointer;
+}
+.w-task-one-item__answer {
+  cursor: pointer;
+}
+.w-task-one-item__answer.is-wrong {
+  border: 2px solid red;
+}
+.w-task-one-item__answer.is-success {
+  border: 2px solid green;
+}
+.w-task-one-item__question-image {
+  border-radius: 10px;
+  width: 300px;
+}
+.w-task-one-item__answer-image {
+  border-radius: 10px;
+  width: 250px;
+}
+.w-task-one-item__answers-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.w-task-one-item__button {
+  padding: 20px 40px;
+  cursor: pointer;
+}
+
 .p-one-item {
   padding-top: 50px;
   padding-right: 50px;

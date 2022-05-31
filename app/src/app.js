@@ -7,3 +7,4 @@ import '../components/go-top-button/go-top-button';
 import '../pages/Lessons/one-item';
 
 import '../widgets/language/components/languages/languages';
+import '../widgets/task/components/one-item/one-item';
