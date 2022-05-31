@@ -4,7 +4,7 @@
     class="w-task-one-item__question js-question"
     data-question-id="<?=$this->question['id']?>"
   >
-    <h2><?=$this->question['text']?></h2>
+    <h2 class="w-task-one-item__question-title"><?=$this->question['text']?></h2>
     <?php if ($this->question['image']): ?>
       <img 
         src="/images-tasks/<?=$this->question['image']?>" 
@@ -13,10 +13,13 @@
       >
     <?php endif; ?>
   </div>
-  <h3>Виберіть варіант:</h3>
+  <h3 class="w-task-one-item__answers-title">Виберіть варіант:</h3>
   <div class="w-task-one-item__answers-list">
     <?php foreach ($this->answers as $answer): ?>
       <div class="w-task-one-item__answer js-answer">
+        <div class="w-task-one-item__success-animation">
+          <?php require __DIR__ . '/../success-animation/success-animation.php'; ?>
+        </div>
         <label>
           <input 
             type="radio" 

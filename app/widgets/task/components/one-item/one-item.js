@@ -35,6 +35,11 @@ if (item) {
               }
             });
           });
+      } else {
+        el.classList.add('is-need-choose');
+        setTimeout(() => {
+          el.classList.remove('is-need-choose');
+        }, 1000);
       }
     });
   });

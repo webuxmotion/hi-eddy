@@ -21,3 +21,5 @@
 <h2>Тег button</h2>
 
 <?=doc('button.html', ['lang' => 'php', 'alias' => $alias])?>
+
+<?php new \app\widgets\task\Task(1) ?>
