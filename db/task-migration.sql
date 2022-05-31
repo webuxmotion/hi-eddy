@@ -6,7 +6,7 @@ CREATE TABLE `task` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `task` (`id`, `task_question_id`, `task_answers_ids`, `task_answer_id`) VALUES
-(1, 1, '1,2,3,4', 1);
+(1, 1, '1,2,3,4', 2);
 
 CREATE TABLE `task_answer` (
   `id` int(11) NOT NULL,
