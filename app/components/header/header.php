@@ -3,7 +3,7 @@
     <nav class="header__nav">
       <div class="header__nav-item">
         <a href="<?=baseUrl()?>lessons" class="header__nav-link">
-          <?=__('tpl_all_lessons')?>
+          <?=__('tpl_lessons')?>
         </a>
       </div>
 

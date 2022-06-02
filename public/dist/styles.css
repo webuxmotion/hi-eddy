@@ -326,16 +326,27 @@ code {
   padding-bottom: 100px;
   font-size: 20px;
 }
-@media screen and (max-width: 900px) {
-  .p-one-item {
-    padding-top: 20px;
-    padding-right: 10px;
-    padding-left: 10px;
-    padding-bottom: 100px;
-  }
-  .p-one-item ol {
-    padding-left: 30px;
-  }
+.p-one-item__top-control {
+  padding: 10px;
+  background-color: rgb(234, 246, 253);
+  text-decoration: none;
+  border-radius: 20px;
+  display: inline-block;
+}
+.p-one-item__top-control.is-active {
+  background-color: #520096;
+  color: white;
+}
+.p-one-item__top-control.is-active svg {
+  opacity: 1;
+}
+.p-one-item__top-control:hover:not(.is-active) {
+  background-color: #d3ecfb;
+}
+.p-one-item__top-control svg {
+  width: 20px;
+  height: auto;
+  opacity: 0.4;
 }
 .p-one-item p {
   max-width: 700px;
@@ -356,10 +367,20 @@ code {
   width: 100%;
   cursor: zoom-out;
 }
+@media screen and (max-width: 900px) {
+  .p-one-item {
+    padding-top: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 100px;
+  }
+  .p-one-item ol {
+    padding-left: 30px;
+  }
+}
 
 .p-list__title {
-  padding: 40px;
-  padding-bottom: 0;
+  color: #520096;
 }
 .p-list__items {
   display: flex;
@@ -368,6 +389,36 @@ code {
 }
 .p-list__item {
   padding: 20px;
+}
+.p-list__filter-button {
+  padding: 10px;
+  text-decoration: none;
+  background-color: rgb(234, 246, 253);
+  border-radius: 20px;
+  margin-left: 10px;
+}
+.p-list__filter-button.is-active {
+  background-color: #a789c3;
+  color: white;
+}
+.p-list__filter-button:hover:not(.is-active) {
+  background-color: #d3ecfb;
+}
+.p-list__header {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+}
+.p-list__filter-list {
+  padding-top: 10px;
+}
+.p-list__not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.p-list__not-found-text {
+  padding-bottom: 10px;
 }
 @media screen and (max-width: 900px) {
   .p-list__title {
@@ -569,6 +620,9 @@ code {
 }
 .sidebar__control:hover {
   opacity: 0.8;
+}
+.sidebar__control svg {
+  width: 50px;
 }
 
 .content {

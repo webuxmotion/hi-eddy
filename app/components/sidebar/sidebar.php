@@ -6,14 +6,12 @@
     <!-- <a href="<?=baseUrl()?>" class="sidebar__control">
       <?=icon('burger')?>
     </a> -->
-    <?php if (isUser()): ?>
-      <a href="<?=baseUrl()?>lessons?pinned=true" class="sidebar__control">
-        <?=icon('pin')?>
-      </a>
-      <!-- <a href="<?=baseUrl()?>lessons?done=true" class="sidebar__control">
-        <?=icon('done')?>
-      </a> -->
-    <?php endif; ?>
+    <a href="<?=baseUrl()?>lessons?pinned=true" class="sidebar__control">
+      <?=icon('pin')?>
+    </a>
+    <a href="<?=baseUrl()?>lessons?done=true" class="sidebar__control">
+      <?=icon('done')?>
+    </a>
     <!-- <a href="<?=baseUrl()?>" class="sidebar__control">
       <?=icon('army-text')?>
     </a> -->

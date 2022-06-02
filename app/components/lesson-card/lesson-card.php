@@ -6,11 +6,11 @@
     </span>
   <?php endif; ?>
   
-  <!-- <?php if ($item['has_done']): ?>
+  <?php if ($item['has_done']): ?>
     <span class="lesson-card__icon lesson-card__icon--done">
       <?=icon('check-color')?>
     </span>
-  <?php endif; ?> -->
+  <?php endif; ?>
 
   <?=$item['title']?>
 </a>

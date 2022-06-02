@@ -1,14 +1,20 @@
 <div class="p-one-item js-one-item-page">
     <?php if (isUser()): ?>
-        <?=$item['has_pin'] ? 'PINNED' : ''?>
-        <a href="/lessons/toggle-pin/<?=$item['id']?>">
-            Toggle Pin
+        <a 
+            href="/lessons/toggle-pin/<?=$item['id']?>"
+            class="p-one-item__top-control <?=$item['has_pin'] ? 'is-active' : ''?>"
+        >
+            <?=icon('pin-color')?>
+            <?=$item['has_pin'] ? 'Unpin' : 'Pin'?>
         </a>
 
-        <!-- <?=$item['has_done'] ? 'DONE' : ''?>
-        <a href="/lessons/toggle-done/<?=$item['id']?>">
-            Toggle Done
-        </a> -->
+        <a 
+            href="/lessons/toggle-done/<?=$item['id']?>"
+            class="p-one-item__top-control <?=$item['has_done'] ? 'is-active' : ''?>"
+        >
+            <?=icon('check-color')?>
+            <?=$item['has_done'] ? 'Unfinish' : 'Finish'?>
+        </a>
     <?php endif; ?>
     <h1><?=$item['title']?></h1>
     <?=$content?>
