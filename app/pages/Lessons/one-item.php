@@ -1,22 +1,22 @@
 <div class="p-one-item js-one-item-page">
     <?php if (isUser()): ?>
         <a 
-            href="/lessons/toggle-pin/<?=$item['id']?>"
-            class="p-one-item__top-control <?=$item['has_pin'] ? 'is-active' : ''?>"
+            href="/lessons/toggle-pin/<?=getParam($item, 'id')?>"
+            class="p-one-item__top-control <?=getParam($item,'has_pin') ? 'is-active' : ''?>"
         >
             <?=icon('pin-color')?>
-            <?=$item['has_pin'] ? 'Unpin' : 'Pin'?>
+            <?=getParam($item, 'has_pin') ? 'Unpin' : 'Pin'?>
         </a>
 
         <a 
-            href="/lessons/toggle-done/<?=$item['id']?>"
-            class="p-one-item__top-control <?=$item['has_done'] ? 'is-active' : ''?>"
+            href="/lessons/toggle-done/<?=getParam($item, 'id')?>"
+            class="p-one-item__top-control <?=getParam($item, 'has_done') ? 'is-active' : ''?>"
         >
             <?=icon('check-color')?>
-            <?=$item['has_done'] ? 'Unfinish' : 'Finish'?>
+            <?=getParam($item, 'has_done') ? 'Unfinish' : 'Finish'?>
         </a>
     <?php endif; ?>
-    <h1><?=$item['title']?></h1>
+    <h1><?=getParam($item, 'title')?></h1>
     <?=$content?>
 </div>
 

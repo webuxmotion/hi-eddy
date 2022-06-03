@@ -99,3 +99,7 @@ function codeTheme() {
 
     return $theme;
 }
+
+function getParam($array, $key) {
+    return isset($array[$key]) ? $array[$key] : '';
+}
