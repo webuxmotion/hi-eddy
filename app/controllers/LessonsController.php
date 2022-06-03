@@ -80,8 +80,8 @@ class LessonsController extends AppController {
 
         $this->setMeta(
             "Tutorial - $alias",
-            $item['meta_description'],
-            $item['meta_keywords']
+            isset($item['meta_description']) ? $item['meta_description'] : '',
+            isset($item['meta_keywords']) ? $item['meta_keywords'] : ''
         );
 
         $this->set(compact('content', 'item'));
