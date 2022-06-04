@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: hi-eddy-mysql-app:3306
--- Generation Time: May 31, 2022 at 02:55 PM
+-- Generation Time: Jun 04, 2022 at 09:01 AM
 -- Server version: 5.7.38
 -- PHP Version: 7.2.2
 
@@ -63,7 +63,8 @@ INSERT INTO `lesson` (`id`, `slug`) VALUES
 (2, 'download-code-editor'),
 (3, 'start-project-hi-eddy'),
 (4, 'main-tags-html'),
-(5, 'destroy-myths-about-programming');
+(5, 'destroy-myths-about-programming'),
+(6, 'create-year-select');
 
 -- --------------------------------------------------------
 
@@ -94,7 +95,9 @@ INSERT INTO `lesson_description` (`id`, `language_id`, `lesson_id`, `title`, `me
 (7, 1, 4, 'Додаємо теги, які найчастіше використовуються', 'Додаємо теги, які найчастіше використовуються', 'теги html'),
 (8, 2, 4, 'Most useful tags in html', 'Most useful tags in html', 'useful tags, html, hi-eddy, hieddy'),
 (9, 1, 5, '18 тверджень, які впень руйнують міфи про програмування', '18 тверджень, які впень руйнують міфи про програмування', 'Міфи про програмування'),
-(10, 2, 5, '18 statements that completely destroy the myths about programming', '18 statements that completely destroy the myths about programming', 'Myths about programming');
+(10, 2, 5, '18 statements that completely destroy the myths about programming', '18 statements that completely destroy the myths about programming', 'Myths about programming'),
+(11, 1, 6, 'Створюємо select для вибору року', 'Створюємо select для вибору року', 'select, js, html'),
+(12, 2, 6, 'Create year select', 'Create year select', 'select, html, js');
 
 -- --------------------------------------------------------
 
@@ -331,13 +334,13 @@ ALTER TABLE `language`
 -- AUTO_INCREMENT for table `lesson`
 --
 ALTER TABLE `lesson`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `lesson_description`
 --
 ALTER TABLE `lesson_description`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `lesson_done`
