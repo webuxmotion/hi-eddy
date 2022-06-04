@@ -68,7 +68,7 @@
     <p>І зробим ми це за допомогою JavaScript.</p>
 
     <p>
-      Вставце цей код перед закриваючим тегом body:
+      Вставте цей код перед закриваючим тегом body:
     </p>
     <?=doc('script-part-two-elements.html', ['lang' => 'php', 'alias' => $alias])?>
   
