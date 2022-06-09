@@ -25,6 +25,16 @@ class ServiceController extends AppController {
      }
 
      public function aboutAction() {
+        //  $var = !empty($_POST['signature']) ? $_POST['signature'] : '';
+        //  $test = !empty($_GET['test']) ? $_GET['test'] : '';
+
+        // throw new \Exception("$test Oh yessssss {$var}", 404);
+        // die;
+        //  if (isAjax()) {
+        //     throw new \Exception("Oh yessssss", 404);
+        //     debug($_POST);
+        //     die;
+        //  }
     
         $this->setMeta(
             Tone::$app->getProperty('site_name') . ' - Про нас',
