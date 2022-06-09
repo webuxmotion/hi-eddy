@@ -7,6 +7,24 @@
         </a>
       </div>
 
+      <div class="header__nav-item">
+        <a href="<?=baseUrl()?>about" class="header__nav-link">
+          про нас
+        </a>
+      </div>
+
+      <div class="header__nav-item">
+        <a href="<?=baseUrl()?>offert" class="header__nav-link">
+          оферта
+        </a>
+      </div>
+
+      <div class="header__nav-item">
+        <a href="<?=baseUrl()?>privacy-policy" class="header__nav-link">
+          політика конфіденційності
+        </a>
+      </div>
+
       <!-- <div class="header__nav-item">
         <a href="<?=baseUrl()?>prices" class="header__nav-link">
           <?=__('tpl_prices')?>

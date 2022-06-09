@@ -582,6 +582,19 @@ code {
   }
 }
 
+.service__header {
+  background-color: #520096;
+  color: white;
+  padding: 50px;
+  text-align: center;
+}
+.service__content {
+  padding: 50px;
+}
+.service__content p {
+  margin-bottom: 20px;
+}
+
 .sidebar {
   width: 125px;
   background-color: rgba(234, 246, 253, 0.97);

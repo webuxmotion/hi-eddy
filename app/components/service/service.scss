@@ -1,0 +1,16 @@
+.service {
+
+  &__header {
+    background-color: $primary-color;
+    color: white;
+    padding: 50px;
+    text-align: center;
+  }
+
+  &__content {
+    padding: 50px;
+    p {
+      margin-bottom: 20px;
+    }
+  }
+}

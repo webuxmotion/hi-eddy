@@ -6,7 +6,11 @@ Router::add('^lessons/(?P<action>[a-z-]+)/(?P<id>[0-9]+)$', ['controller' => 'Le
 
 Router::add('^(?P<lang>[a-z]{2}+)?/?lessons/(?P<alias>[a-z-]+)?$', ['controller' => 'Lessons', 'action' => 'one-item']);
 
-Router::add('^(?P<lang>[a-z]{2}+)?/?about/?$', ['controller' => 'Pages', 'action' => 'about']);
+Router::add('^(?P<lang>[a-z]{2}+)?/?about/?$', ['controller' => 'Service', 'action' => 'about']);
+Router::add('^(?P<lang>[a-z]{2}+)?/?offert/?$', ['controller' => 'Service', 'action' => 'offert']);
+Router::add('^(?P<lang>[a-z]{2}+)?/?privacy-policy/?$', ['controller' => 'Service', 'action' => 'privacy-policy']);
+
+
 Router::add('^(?P<lang>[a-z]{2}+)?/?contacts/?$', ['controller' => 'Pages', 'action' => 'contacts']);
 Router::add('^(?P<lang>[a-z]{2}+)?/?sponsors/?$', ['controller' => 'Pages', 'action' => 'sponsors']);
 Router::add('^(?P<lang>[a-z]{2}+)?/?command/?$', ['controller' => 'Pages', 'action' => 'command']);
