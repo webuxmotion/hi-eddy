@@ -25,6 +25,13 @@
         </a>
       </div>
 
+      <div class="header__nav-item">
+        <a href="<?=baseUrl()?>payment-and-delivery" class="header__nav-link">
+          оплата та доставка
+        </a>
+      </div>
+      
+
       <!-- <div class="header__nav-item">
         <a href="<?=baseUrl()?>prices" class="header__nav-link">
           <?=__('tpl_prices')?>

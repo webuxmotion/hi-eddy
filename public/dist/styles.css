@@ -661,8 +661,8 @@ code {
   flex-wrap: wrap;
 }
 .header__nav-item {
-  padding-left: 42px;
-  padding-right: 42px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .header__nav-link {
   color: #520096;

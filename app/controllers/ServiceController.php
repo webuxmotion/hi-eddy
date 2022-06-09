@@ -32,4 +32,13 @@ class ServiceController extends AppController {
             'hi-eddy, освітня платформа, про нас'
         );
      }
+
+     public function paymentAndDeliveryAction() {
+    
+        $this->setMeta(
+            Tone::$app->getProperty('site_name') . ' - Оплата та доставка',
+            'hi-eddy | Оплата та доставка',
+            'hi-eddy, освітня платформа, оплата, доставка'
+        );
+     }
 }

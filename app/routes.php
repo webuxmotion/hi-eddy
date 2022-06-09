@@ -10,6 +10,7 @@ Router::add('^(?P<lang>[a-z]{2}+)?/?about/?$', ['controller' => 'Service', 'acti
 Router::add('^(?P<lang>[a-z]{2}+)?/?offert/?$', ['controller' => 'Service', 'action' => 'offert']);
 Router::add('^(?P<lang>[a-z]{2}+)?/?privacy-policy/?$', ['controller' => 'Service', 'action' => 'privacy-policy']);
 
+Router::add('^(?P<lang>[a-z]{2}+)?/?payment-and-delivery/?$', ['controller' => 'Service', 'action' => 'payment-and-delivery']);
 
 Router::add('^(?P<lang>[a-z]{2}+)?/?contacts/?$', ['controller' => 'Pages', 'action' => 'contacts']);
 Router::add('^(?P<lang>[a-z]{2}+)?/?sponsors/?$', ['controller' => 'Pages', 'action' => 'sponsors']);
