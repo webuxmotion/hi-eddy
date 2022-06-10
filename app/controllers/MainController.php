@@ -17,8 +17,9 @@ class MainController extends AppController {
         // 'amount'         => '4',
         // 'currency'       => 'UAH',
         // 'description'    => 'description text',
-        // 'order_id'       => 'order_id_9',
+        // 'order_id'       => 'order_id_10',
         // 'version'        => '3',
+        // 'language' => 'en',
         // 'result_url'     => baseUrl(),
         // 'server_url'     => 'https://hi-eddy.com/payment-payment/sdfsdf/payyyy'
         // ));
