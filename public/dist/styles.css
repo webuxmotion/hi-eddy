@@ -594,6 +594,13 @@ code {
 .service__content p {
   margin-bottom: 20px;
 }
+.service__content img {
+  width: 500px;
+  max-width: 100%;
+}
+.service__content iframe {
+  max-width: 100%;
+}
 
 .sidebar {
   width: 125px;
