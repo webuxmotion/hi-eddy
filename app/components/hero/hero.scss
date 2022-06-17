@@ -1,21 +1,25 @@
 .hero {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
   justify-content: center;
-  height: calc(100vh - 62px);
-  background-color: #8ee4fc;
-  padding-right: 100px;
+  height: calc(100vh - $header-height);
   padding-bottom: 150px;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
+  padding-left: 5%;
 
   &__text {
     text-align: left;
-    font-size: 40px;
-    color: $primary-color;
     margin-bottom: 30px;
+
+    background: linear-gradient(90deg, #520096 17.78%, #5ABCD6 59.99%, #5ABCD6 87.46%, #9747FF 110.26%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+font-weight: 700;
+font-size: 60px;
+line-height: 58px;
 
     span {
       font-style: italic;
@@ -28,6 +32,7 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25), inset -1px 4px 17px -2px rgba(250, 253, 255, 0.8);
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     height: 70px;
     border-radius: 22px;
     color: white;
@@ -47,44 +52,38 @@
     min-width: 500px;
   }
 
-  &__image-main {
+  &__columns {
+    display: flex;
+    align-items: center;
+  }
+
+  &__column {
+    width: 50%;
+    position: relative;
+  }
+
+  &__eddy-image {
+    z-index: 2;
+    position: relative;
+    display: inline-block;
+
+    img {
+      z-index: 2;
+      position: relative;
+    }
+  }
+
+  &__eddy-background {
     position: absolute;
     top: 0;
-    left: 0;
-    bottom: 0;
     right: 0;
-
-    background-size: contain;
-    background-position: left;
-    background-repeat: no-repeat;
-    z-index: 10;
-  }
-
-  &__image-sea {
-    position: absolute;
-    height: 30%;
-    left: 0;
     bottom: 0;
-    right: 0;
-
-    background-size: cover;
-    background-position: left;
-    background-repeat: no-repeat;
-    z-index: 9;
+    left: 0;
+    background: radial-gradient(81.62% 83.19% at 50% 50.96%, rgba(255, 164, 57, 0.56) 0%, rgba(255, 241, 222, 0.56) 62.29%, rgba(235, 246, 253, 0.56) 100%);
+    filter: blur(48px);
+    z-index: 1;
   }
-
-  &__image-duck {
-    position: absolute;
-    bottom: 50px;
-    right: 50px;
-    width: 30%;
-    height: 100%;
-
-    background-size: contain;
-    background-position: left bottom;
-    background-repeat: no-repeat;
-    z-index: 11;
-  }
+  
 
   @include media('mobile') {
     padding-right: 0;

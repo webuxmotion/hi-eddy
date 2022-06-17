@@ -1,3 +1,4 @@
 <a href="/" class="logo">
-  <?=icon('logo')?>
+  <?=icon('logo-eddy')?>
+  <span>hi-eddy</span>
 </a>

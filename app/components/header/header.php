@@ -65,11 +65,11 @@
           <?=__('tpl_login')?>
         </span>
       </a>
-      <a href="<?=baseUrl()?>login?redirectTo=profile" class="header__button">
-        <span class="header__button-text">
-          <?=__('tpl_registration')?>
-        </span>
-      </a>
+      
+      <?=$this->component('button-corner', [
+        'title' => __('tpl_registration'),
+        'href' => baseUrl() . "login?redirectTo=profile"
+      ])?>
     <?php endif; ?>
   </div>
 </div>

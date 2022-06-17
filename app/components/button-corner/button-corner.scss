@@ -1,0 +1,18 @@
+.button-corner {
+  background-color: $color-primary;
+  height: 60px;
+  border: none;
+  border-bottom-left-radius: 18px;
+  min-width: 187px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 400;
+
+  &:hover {
+    background-color: $color-primary-hover;
+  }
+}

@@ -1,6 +1,6 @@
 .sidebar {
-  width: $sidebar-size;
-  background-color: rgba(234, 246, 253, 0.97);
+  width: $sidebar-width;
+  background-color: $bg-color;
   position: fixed;
   top: 0;
   left: 0;
@@ -9,12 +9,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding-top: 24px;
   padding-bottom: 30px;
   z-index: 1000;
 
   @include media('mobile') {
-    width: $small-sidebar-size;
+    //width: $small-sidebar-size;
   }
 
   &__column {

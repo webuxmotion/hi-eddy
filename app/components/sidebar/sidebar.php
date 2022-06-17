@@ -1,8 +1,7 @@
 <div class="sidebar">
+  <?=$this->component('logo')?>
   <div class="sidebar__column">
-    <a href="<?=baseUrl()?>" class="sidebar__logo">
-      <?=icon('logo-small')?>
-    </a>
+    
     <!-- <a href="<?=baseUrl()?>" class="sidebar__control">
       <?=icon('burger')?>
     </a> -->

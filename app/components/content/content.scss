@@ -1,7 +1,7 @@
 .content {
-  padding-left: $sidebar-size;
+  padding-left: $sidebar-width;
 
   @include media('mobile') {
-    padding-left: $small-sidebar-size;
+    //padding-left: $small-sidebar-size;
   }
 }

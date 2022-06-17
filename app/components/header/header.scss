@@ -1,15 +1,16 @@
 .header {
   display: flex;
-  background-color: rgba(234, 246, 253, 0.97);
-  align-items: center;
+  background-color: white;
   justify-content: space-between;
-  min-height: 62px;
-  padding-right: 50px;
+  min-height: $header-height;
   padding-left: 50px;
+  border-bottom: 1px solid $border-color-1;
 
   &__nav {
     display: flex;
     flex-wrap: wrap;
+    height: 100%;
+    align-items: center;
   }
 
   &__nav-item {
