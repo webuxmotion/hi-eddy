@@ -65,6 +65,15 @@ code {
   border: none;
   cursor: pointer;
 }
+.w-languages__button svg path {
+  stroke: #9747FF;
+}
+.w-languages__button svg rect {
+  fill: #9747FF;
+}
+.w-languages__button svg rect + path {
+  stroke: white;
+}
 .w-languages__button:hover {
   opacity: 0.8;
 }
@@ -498,6 +507,39 @@ code {
   background-color: #520096;
 }
 
+.button-sidebar {
+  height: 50px;
+  border: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #9747FF;
+  font-size: 16px;
+  padding-left: 20%;
+  box-sizing: border-box;
+}
+.button-sidebar__text {
+  display: inline-block;
+  margin-bottom: 2px;
+  margin-left: 10px;
+}
+.button-sidebar__icon svg {
+  width: 20px;
+}
+.button-sidebar__icon svg path {
+  stroke: #9747FF;
+}
+.button-sidebar:hover {
+  color: #520096;
+  background-color: rgba(82, 0, 150, 0.1);
+}
+.button-sidebar:hover .button-sidebar__icon svg path {
+  stroke: #520096;
+}
+
 .button-corner {
   background-color: #9747FF;
   height: 60px;
@@ -622,23 +664,29 @@ code {
 }
 
 .sidebar {
-  width: 16%;
+  width: 230px;
   background-color: #EAF6FD;
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 30px;
   z-index: 1000;
-}
-.sidebar__column {
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+.sidebar__main {
+  flex-grow: 1;
+  padding-top: 20px;
+}
+.sidebar__footer {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+.sidebar__divider {
+  border-bottom: 1px solid #CAE0EE;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .sidebar__logo {
   display: inline-block;
@@ -647,19 +695,9 @@ code {
 .sidebar__logo:hover {
   opacity: 0.8;
 }
-.sidebar__control {
-  display: inline-block;
-  margin-bottom: 35px;
-}
-.sidebar__control:hover {
-  opacity: 0.8;
-}
-.sidebar__control svg {
-  width: 50px;
-}
 
 .content {
-  padding-left: 16%;
+  padding-left: 230px;
 }
 .header {
   display: flex;

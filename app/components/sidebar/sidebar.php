@@ -1,24 +1,36 @@
 <div class="sidebar">
-  <?=$this->component('logo')?>
-  <div class="sidebar__column">
-    
-    <!-- <a href="<?=baseUrl()?>" class="sidebar__control">
-      <?=icon('burger')?>
-    </a> -->
-    <a href="<?=baseUrl()?>lessons?pinned=true" class="sidebar__control">
-      <?=icon('pin')?>
-    </a>
-    <a href="<?=baseUrl()?>lessons?done=true" class="sidebar__control">
-      <?=icon('done')?>
-    </a>
-    <!-- <a href="<?=baseUrl()?>" class="sidebar__control">
-      <?=icon('army-text')?>
-    </a> -->
+  <div class="sidebar__header">
+    <?=$this->component('logo')?>
   </div>
-  <div class="sidebar__column">
-    <!-- <a href="<?=baseUrl()?>" class="sidebar__control">
-      <?=icon('dollar-sign')?>
-    </a> -->
+  
+  <div class="sidebar__main">
+
+    <?=$this->component('button-sidebar', [
+      'href' => baseUrl() . 'lessons',
+      'title' => __('tpl_lessons'),
+      'icon' => 'lesson'
+    ])?>
+    <!-- <?=$this->component('button-sidebar', [
+      'href' => baseUrl() . 'lessons',
+      'title' => __('tpl_courses'),
+      'icon' => 'courses'
+    ])?> -->
+
+    <div class="sidebar__divider"></div>
+
+    <?=$this->component('button-sidebar', [
+      'href' => baseUrl() . 'lessons?pinned=true',
+      'title' => __('tpl_pinned'),
+      'icon' => 'pin'
+    ])?>
+    <?=$this->component('button-sidebar', [
+      'href' => baseUrl() . 'lessons?done=true',
+      'title' => __('tpl_finished'),
+      'icon' => 'done'
+    ])?>
+
+  </div>
+  <div class="sidebar__footer">
     <?php new \app\widgets\language\Language() ?>
   </div>
 </div>

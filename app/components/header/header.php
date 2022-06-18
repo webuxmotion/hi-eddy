@@ -1,11 +1,6 @@
 <div class="header">
   <div class="header__column">
     <nav class="header__nav">
-      <div class="header__nav-item">
-        <a href="<?=baseUrl()?>lessons" class="header__nav-link">
-          <?=__('tpl_lessons')?>
-        </a>
-      </div>
 
       <div class="header__nav-item">
         <a href="<?=baseUrl()?>about" class="header__nav-link">

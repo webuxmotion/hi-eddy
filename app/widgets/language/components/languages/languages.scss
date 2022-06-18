@@ -33,6 +33,20 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
+    
+    svg {
+      path {
+        stroke: $color-primary;
+      }
+
+      rect {
+        fill: $color-primary;
+
+        & + path {
+          stroke: white;
+        }
+      }
+    }
 
     &:hover {
       opacity: 0.8;
