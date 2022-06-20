@@ -47,24 +47,33 @@
   </div>
   <div class="header__column">
     <?php if (isUser()): ?>
-      <a href="<?=baseUrl()?>profile" class="header__button">
-        <span class="header__button-icon"><?=icon('user-bold')?></span>
-        <span class="header__button-text">
-          <?=__('tpl_profile')?>
-        </span>
-      </a>
+      <div class="header__button-corner">
+        <?=$this->component('button-corner', [
+          'title' => __('tpl_profile'),
+          'href' => baseUrl() . "profile",
+          'iconLeft' => 'user-bold',
+          'fullWidth' => true,
+        ])?>
+      </div>
     <?php else: ?>
-      <a href="<?=baseUrl()?>login?redirectTo=profile" class="header__button">
-        <span class="header__button-icon"><?=icon('user-bold')?></span>
-        <span class="header__button-text">
-          <?=__('tpl_login')?>
-        </span>
-      </a>
       
-      <?=$this->component('button-corner', [
-        'title' => __('tpl_registration'),
-        'href' => baseUrl() . "login?redirectTo=profile"
-      ])?>
+      <div class="header__button-bottom-radius">
+        <?=$this->component('button-corner', [
+          'title' => __('tpl_login'),
+          'href' => baseUrl() . "login?redirectTo=profile",
+          'iconLeft' => 'user-bold',
+          'fullWidth' => true,
+        ])?>
+      </div>
+
+      <div class="header__button-corner">
+        <?=$this->component('button-corner', [
+          'title' => __('tpl_registration'),
+          'href' => baseUrl() . "login?redirectTo=profile",
+          'fullWidth' => true,
+        ])?>
+      </div>
+      
     <?php endif; ?>
   </div>
 </div>

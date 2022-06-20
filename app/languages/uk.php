@@ -22,4 +22,5 @@ return [
     'tpl_all' => 'Всі',
     'tpl_pinned' => 'Запінені',
     'tpl_finished' => 'Завершені',
+    'tpl_saved' => 'Збережені'
 ];

@@ -22,4 +22,5 @@ return [
     'tpl_all' => 'All',
     'tpl_pinned' => 'Pinned',
     'tpl_finished' => 'Finished',
+    'tpl_saved' => 'Saved'
 ];

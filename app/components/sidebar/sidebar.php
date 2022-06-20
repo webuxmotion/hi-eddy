@@ -20,14 +20,16 @@
 
     <?=$this->component('button-sidebar', [
       'href' => baseUrl() . 'lessons?pinned=true',
-      'title' => __('tpl_pinned'),
-      'icon' => 'pin'
+      'title' => __('tpl_saved'),
+      'icon' => 'saved'
     ])?>
+
     <?=$this->component('button-sidebar', [
       'href' => baseUrl() . 'lessons?done=true',
       'title' => __('tpl_finished'),
-      'icon' => 'done'
+      'icon' => 'paw'
     ])?>
+    
 
   </div>
   <div class="sidebar__footer">
