@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: hi-eddy-mysql-app:3306
--- Generation Time: Jun 04, 2022 at 09:01 AM
+-- Generation Time: Jul 03, 2022 at 08:41 PM
 -- Server version: 5.7.38
 -- PHP Version: 7.2.2
 
@@ -239,6 +239,7 @@ INSERT INTO `task_question_description` (`id`, `task_question_id`, `lang_id`, `t
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `email` varchar(256) NOT NULL,
+  `password` varchar(256) DEFAULT NULL,
   `firstName` varchar(256) DEFAULT NULL,
   `lastName` varchar(256) DEFAULT NULL,
   `phone` varchar(256) DEFAULT NULL,
@@ -388,7 +389,7 @@ ALTER TABLE `task_question_description`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
