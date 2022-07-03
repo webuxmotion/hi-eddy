@@ -19,6 +19,25 @@ class UserController extends AppController {
 
         $this->set(compact('user'));
     }
+
+    public function loginWithPasswordAction() {
+        if (!empty($_POST)) {
+            $data = $_POST;
+
+            $user_model = new UserModel();
+            $dublicate = $user_model->findDuplicate('email', $data['email']);
+            
+            if ($dublicate) {
+                if (!$dublicate['password']) {
+                    $_SESSION['errors'] = 'Wrong email or password';
+                }
+            } 
+
+            $_SESSION['errors'] = 'Wrong email or password';
+        
+            redirect();
+        }
+    }
     
     public function loginAction() {
         $lang = Tone::$app->getProperty('lang');

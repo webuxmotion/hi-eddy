@@ -8,6 +8,7 @@ class UserModel extends AppModel {
     
     public $attributes = [
         'email' => '',
+        'password' => '',
         'firstName' => '',
         'lastName' => '',
         'avatar' => '',
@@ -44,6 +45,11 @@ class UserModel extends AppModel {
                 $_SESSION['user'][$k] = $v;
             }
         }
+    }
+
+    public function saveTmpUser($data) {
+        $email = $data['email'];
+        $avatar = $data['avatar'];
     }
 
     public function saveGoogleUser($data) {

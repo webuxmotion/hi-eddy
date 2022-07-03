@@ -19,12 +19,9 @@
 
 
 <?php if ($show): ?>
-<div class="message section <?=$type?>">
+<div class="message section <?=$type?>" style="color: red;">
   <div class="container">
     <div class="message__body">
-      <div class="message__icon">
-        <?=$icon?>
-      </div>
       <?=$content?>
     </div>
   </div>
