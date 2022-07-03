@@ -42,6 +42,43 @@ class UserController extends AppController {
         $this->set(compact('google_login_url'));
     }
 
+    public function registrationAction() {
+        $lang = Tone::$app->getProperty('lang');
+        
+        $this->setMeta(
+            'Registration' . ' - ' . Tone::$app->getProperty('site_name'),
+            'Login page. HI-EDDY Academy',
+            'hi-eddy, academy, education'
+        );
+
+        GoogleAuth::run();
+
+        $queryParamsString = '';
+        $redirectTo = $_GET['redirectTo'] ?? null;
+        if ($redirectTo) {
+            $queryParamsString .= '?redirectTo=' . $redirectTo;
+        }
+        $google_login_url = $lang . '/user/click-on-google-login-button' . $queryParamsString;
+
+        $this->set(compact('google_login_url'));
+    }
+
+    public function resetPasswordAction() {
+        
+    }
+
+    public function changeEmailAction() {
+
+    }
+
+    public function createPasswordAction() {
+
+    }
+
+    public function changePasswordAction() {
+        
+    }
+
     public function clickOnGoogleLoginButtonAction() {
         $redirectTo = $_GET['redirectTo'] ?? null;
         GoogleAuth::run();

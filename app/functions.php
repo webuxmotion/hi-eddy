@@ -79,6 +79,24 @@ function isUser() {
     return !empty($_SESSION['user']);
 }
 
+function getUserButtonTitle() {
+    $buttonTitle = 'Profile';
+
+    if (!empty($_SESSION['user'])) {
+        $user = $_SESSION['user'];
+
+        if ($user['firstName'] || $user['lastName']) {
+            $buttonTitle = $user['firstName'] . ' ' . $user['lastName'];
+        } else if ($user['firstName']) {
+            $buttonTitle = $user['firstName'];
+        } else if ($user['lastName']) {
+            $buttonTitle = $user['lastName'];
+        }
+    }
+
+    return $buttonTitle;
+}
+
 function isAdmin() {
     return !empty($_SESSION['user']) 
         && !empty($_SESSION['user']['role'])
