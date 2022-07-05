@@ -10,7 +10,9 @@
       <!-- END. title -->
     </div>
     <div class="auth__content">
-      <form class="auth__form">
+      <form class="auth__form" method="POST" action="/user/create-password">
+        <input type="hidden" name="email" value="<?=$email?>" />
+        <input type="hidden" name="token" value="<?=$token?>" />
         <!-- input -->
         <div class="input" data-name="getInput">
           <label for="password" class="input__label">Новий пароль</label>

@@ -121,3 +121,9 @@ function codeTheme() {
 function getParam($array, $key) {
     return isset($array[$key]) ? $array[$key] : '';
 }
+
+function isExpired($time) {
+    $currentTime = time();
+
+    return ($currentTime - $time) > 0;
+}

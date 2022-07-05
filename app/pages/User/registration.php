@@ -41,18 +41,18 @@
       </h3>
       <!-- END. title -->
       <div class="g-spacer-3"></div>
-      <form class="auth__form">
+      <form class="auth__form" method="POST" action="/user/registerWithPassword">
         <!-- input -->
         <div class="input" data-name="getInput">
           <label for="email" class="input__label">E-mail</label>
-          <input type="email" name="email" id="email" class="input__input-field" placeholder=" " value="">
+          <input type="email" name="email" id="email" class="input__input-field" placeholder=" " value="" required>
         </div>
         <!-- END. input -->
         <div class="g-spacer-2"></div>
         <!-- input -->
         <div class="input" data-name="getInput">
           <label for="password" class="input__label">Пароль</label>
-          <input type="password" name="password" id="password" class="input__input-field" placeholder=" " value="">
+          <input type="password" name="password" id="password" class="input__input-field" placeholder=" " value="" required>
         </div>
         <!-- END. input -->
         <div class="g-spacer-4"></div>
@@ -61,7 +61,7 @@
         <span class="button__text">Зареєструватися</span>
         </button>
         <!-- END. button -->
-        <div class="g-spacer-5"></div>
+        <div class="g-spacer-8"></div>
         <p>Вже маєте свій аккаунт? <a href="<?=baseUrl() . "login?redirectTo=profile"?>">Увійти на сайт</a></p>
       </form>
     </div>

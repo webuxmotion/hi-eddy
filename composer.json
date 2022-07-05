@@ -3,6 +3,7 @@
     "require": {
         "tonephp/tonephp": "^0.1.12",
         "google/apiclient": "^2.11",
-        "telegram-bot/api": "^2.3"
+        "telegram-bot/api": "^2.3",
+        "swiftmailer/swiftmailer": "^6.2"
     }
 }

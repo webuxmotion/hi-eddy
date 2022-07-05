@@ -1,5 +1,3 @@
-<?=$this->component('message')?>
-
 <!-- p-login -->
 <div class="p-login">
   <!-- auth -->
@@ -64,6 +62,8 @@
         </button>
         <!-- END. button -->
         <div class="g-spacer-5"></div>
+        <p>Ще нема аккаунту? <a href="<?=baseUrl() . "registration"?>">Зареєструватись</a></p>
+        <div class="g-spacer-8"></div>
         <p>Забули пароль? <a href="<?=baseUrl() . "reset-password"?>">Зкинути пароль</a></p>
       </form>
     </div>

@@ -10,6 +10,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;500;600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/styles/<?=codeTheme()?>.min.css">
   <link rel="stylesheet" href="/ui/styles.css">
+  <style>
+    .debug {
+      z-index: 100000;
+      position: relative;
+      background-color: white;
+      padding: 20px;
+    }
+  </style>
 </head>
 <body>
 <div class="l-layout">
@@ -21,6 +29,7 @@
       <?=$this->component('header')?>
     </div>
     <div class="l-layout__content">
+      <?=$this->component('message')?>
       <?=$content?>
     </div>
     <div class="l-layout__footer">

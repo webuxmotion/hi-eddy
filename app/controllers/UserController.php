@@ -5,6 +5,7 @@ namespace app\controllers;
 use core\Tone;
 use app\services\GoogleAuth;
 use app\models\UserModel;
+use app\models\TmpUserModel;
 
 class UserController extends AppController {
 
@@ -25,10 +26,10 @@ class UserController extends AppController {
             $data = $_POST;
 
             $user_model = new UserModel();
-            $dublicate = $user_model->findDuplicate('email', $data['email']);
+            $duplicate = $user_model->findDuplicate('email', $data['email']);
             
-            if ($dublicate) {
-                if (!$dublicate['password']) {
+            if ($duplicate) {
+                if (!$duplicate['password']) {
                     $_SESSION['errors'] = 'Wrong email or password';
                 }
             } 
@@ -37,6 +38,53 @@ class UserController extends AppController {
         
             redirect();
         }
+        redirect();
+    }
+
+    public function registerWithPasswordAction() {
+        if (!empty($_POST)) {
+            $data = $_POST;
+
+            if ($data['email'] && $data['password']) {
+                $user_model = new UserModel();
+                $duplicate = $user_model->findDuplicate('email', $data['email']);
+                
+                if ($duplicate) {
+                    $_SESSION['errors'] = 'This email already exists';
+                } else {
+                    $tmp_user_model = new TmpUserModel();
+                    $hash = password_hash($data['password'], PASSWORD_DEFAULT);
+                    $newData = [
+                        'email' => $data['email'],
+                        'token' => $hash,
+                        'expired' => time() + 5,
+                        'type' => 'REGISTRATION',
+                    ];
+                    $saved = $tmp_user_model->saveTmpUser($newData);
+
+                    if ($saved) {
+                        $href = baseUrl() . "user/registerWithPassword?token=" . $hash;
+                        $url = "<a href='" . $href . "'>Підтвердити</a>";
+                        $_SESSION['success'] =  $url . $href;
+                    }
+                }
+            }
+        } elseif (!empty($_GET)) {
+            
+            if (isset($_GET['token'])) {
+                $tmp_user_model = new TmpUserModel();
+                $created = $tmp_user_model->newFromToken($_GET['token']);
+
+                if ($created) {
+                    $_SESSION['success'] = 'Вітаємо! Акаунт створено. Можете увійти зі своїм email та паролем';
+                    redirect(baseUrl() . 'login');
+                } else {
+                    $_SESSION['errors'] = 'Посилання вже не актуально. Почніть процес з початку.';
+                }
+            }
+        }
+        
+        redirect(baseUrl() . 'registration');
     }
     
     public function loginAction() {
@@ -83,7 +131,39 @@ class UserController extends AppController {
     }
 
     public function resetPasswordAction() {
-        
+        if (!empty($_POST)) {
+            $data = $_POST;
+            $email = $data['email'];
+
+            if ($email) {
+                $user_model = new UserModel();
+                $duplicate = $user_model->findDuplicate('email', $data['email']);
+            
+                if ($duplicate) {
+                    $tmp_user_model = new TmpUserModel();
+                    $hash = password_hash(rand(), PASSWORD_DEFAULT);
+                    $newData = [
+                        'email' => $email,
+                        'token' => $hash,
+                        'expired' => time() + 600,
+                        'type' => 'CREATE_PASSWORD',
+                    ];
+                    $saved = $tmp_user_model->saveTmpUser($newData);
+
+                    if ($saved) {
+                        $href = baseUrl() . "user/create-password?token=" . $hash;
+                        $url = "<a href='" . $href . "'>Підтвердити</a>";
+                        $_SESSION['success'] =  $url . $href;
+                    } else {
+                        $_SESSION['errors'] = "Щось пішло не так.";
+                    }
+                } else {
+                    $_SESSION['errors'] = 'Упс. Ми не знайшли користувача з такою поштою:<br> ' . $email;
+                }
+            }
+
+            redirect();
+        }
     }
 
     public function changeEmailAction() {
@@ -91,7 +171,68 @@ class UserController extends AppController {
     }
 
     public function createPasswordAction() {
+        if (!empty($_POST)) {
+            debug($_POST);
+            $token = $_POST['token'];
+            $email = $_POST['email'];
+            $password = $_POST['password'];
 
+            $tmp_user_model = new TmpUserModel();
+            $user = $tmp_user_model->findByToken($token);      
+            
+            if ($user) {
+                if (isExpired($user['expired'])) {
+                    $tmp_user_model->deleteById($user['id']);
+                    $_SESSION['errors'] = 'Щось пішло не так. Почніть процес з початку.';
+                    redirect(baseUrl() . 'login');
+                } else {
+                    if ($email == $user['email']) {
+                        $user_model = new UserModel();
+                        $updated = $user_model->updatePasswordByEmail($password, $email);
+                    
+                        if ($updated) {
+                            $_SESSION['success'] = 'Пароль був оновлений!.';
+                            $tmp_user_model->deleteById($user['id']);
+
+                            redirect(baseUrl() . 'login');
+                        } else {
+                            $_SESSION['errors'] = 'Щось пішло не так. Почніть процес з початку.';
+                        }
+                    }
+                }
+            } else {
+                $_SESSION['errors'] = 'Щось пішло не так. Почніть процес з початку.';
+                redirect(baseUrl() . 'login');
+            }
+            
+            redirect();
+        } elseif (!empty($_GET)) {
+            $email = '';
+            $token = '';
+            
+            if (isset($_GET['token'])) {
+                $token = $_GET['token'];
+                $tmp_user_model = new TmpUserModel();
+                $user = $tmp_user_model->findByToken($token);
+
+                if ($user) {
+                    if (isExpired($user['expired'])) {
+                        $tmp_user_model->deleteById($user['id']);
+                        $_SESSION['errors'] = 'Посилання вже не актуально. Почніть процес з початку.';
+                        redirect(baseUrl() . 'login');
+                    } else {
+                        $email = $user['email'];
+
+                        $this->set(compact('email', 'token'));
+                    }
+                } else {
+                    $_SESSION['errors'] = 'Посилання вже не актуально. Почніть процес з початку.';
+                    redirect(baseUrl() . 'login');
+                }
+            }
+        } else {
+            redirect(baseUrl() . 'login');
+        }
     }
 
     public function changePasswordAction() {

@@ -13,7 +13,7 @@
       Ми надішлемо посилання на створення нового паролю на ваш email .
     </div>
     <div class="auth__content">
-      <form class="auth__form">
+      <form class="auth__form" method="POST" action="/user/reset-password">
         <!-- input -->
         <div class="input" data-name="getInput">
           <label for="email" class="input__label">E-mail</label>

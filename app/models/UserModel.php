@@ -47,11 +47,6 @@ class UserModel extends AppModel {
         }
     }
 
-    public function saveTmpUser($data) {
-        $email = $data['email'];
-        $avatar = $data['avatar'];
-    }
-
     public function saveGoogleUser($data) {
         $res = $this->findOne($data['email'], 'email');
 
@@ -76,6 +71,14 @@ class UserModel extends AppModel {
             $res = $this->findOne($email, 'email');
             $this->setSessionUser($res[0]);
         }
+    }
+
+    public function saveUser($data) {
+        $this->load($data);
+        if ($this->validate()) {
+            return $this->save();
+        }
+        return false;
     }
 
     public function updateProfile($data) {
@@ -122,6 +125,31 @@ class UserModel extends AppModel {
 
                 return true;
             }
+        }
+
+        return false;
+    }
+
+    public function updatePasswordByEmail($password, $email) {
+        $res = $this->findOne($email, 'email');
+
+        if (!empty($res)) {
+            $hash = password_hash($password, PASSWORD_DEFAULT);
+
+            $sql = "
+                UPDATE user
+                SET 
+                    password = ?
+                WHERE 
+                    email = ?
+            ";
+
+            $this->db->execute($sql, [
+                $hash, 
+                $email,
+            ]);
+
+            return true;
         }
 
         return false;
