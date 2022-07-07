@@ -14,7 +14,7 @@
    <!-- END. __layout-title -->
    <!-- __layout-main -->
    <div class="p-profole__layout-main">
-      <form method="GET">
+      <form method="POST" action="/user/update">
          <div class="p-profole__group-title">
             <!-- group-title -->
             <div class="group-title" data-name="getGroupTitle">
@@ -27,7 +27,7 @@
                <!-- input -->
                <div class="input" data-name="getInput">
                   <label for="firstname" class="input__label">Ім’я</label>
-                  <input type="text" name="firstname" id="firstname" class="input__input-field" placeholder=" " value="">
+                  <input type="text" name="firstName" id="firstname" class="input__input-field" placeholder=" " value="<?=$user['firstName']?>">
                </div>
                <!-- END. input -->
             </div>
@@ -35,7 +35,7 @@
                <!-- input -->
                <div class="input" data-name="getInput">
                   <label for="lastname" class="input__label">Прізвище</label>
-                  <input type="text" name="lastname" id="lastname" class="input__input-field" placeholder=" " value="">
+                  <input type="text" name="lastName" id="lastname" class="input__input-field" placeholder=" " value="<?=$user['lastName']?>">
                </div>
                <!-- END. input -->
             </div>
@@ -43,7 +43,15 @@
                <!-- input -->
                <div class="input" data-name="getInput">
                   <label for="email" class="input__label">E-mail</label>
-                  <input type="email" name="email" id="email" class="input__input-field" placeholder=" " value="test@gmail.com" disabled="true">
+                  <input type="email" name="email" id="email" class="input__input-field" placeholder=" " value="<?=$user['email']?>" disabled="true">
+               </div>
+               <!-- END. input -->
+            </div>
+            <div class="p-profole__input">
+               <!-- input -->
+               <div class="input" data-name="getInput">
+                  <label for="phone" class="input__label">Телефон</label>
+                  <input type="text" name="phone" id="phone" class="input__input-field" placeholder=" " value="<?=$user['phone']?>">
                </div>
                <!-- END. input -->
             </div>
@@ -60,7 +68,7 @@
                <!-- input -->
                <div class="input" data-name="getInput">
                   <label for="lelegram" class="input__label">Telegram</label>
-                  <input type="text" name="lelegram" id="lelegram" class="input__input-field" placeholder=" " value="">
+                  <input type="text" name="telegram" id="lelegram" class="input__input-field" placeholder=" " value="<?=$user['telegram']?>">
                </div>
                <!-- END. input -->
             </div>
@@ -68,7 +76,7 @@
                <!-- input -->
                <div class="input" data-name="getInput">
                   <label for="facebook" class="input__label">Facebook</label>
-                  <input type="text" name="facebook" id="facebook" class="input__input-field" placeholder=" " value="">
+                  <input type="text" name="facebook" id="facebook" class="input__input-field" placeholder=" " value="<?=$user['facebook']?>">
                </div>
                <!-- END. input -->
             </div>

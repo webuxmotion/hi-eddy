@@ -41,7 +41,7 @@
       </h3>
       <!-- END. title -->
       <div class="g-spacer-3"></div>
-      <form class="auth__form" method="POST" action="/user/login-with-password">
+      <form class="auth__form" method="POST" action="<?=$form_action?>">
         <!-- input -->
         <div class="input" data-name="getInput">
           <label for="email" class="input__label">E-mail</label>

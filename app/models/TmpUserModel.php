@@ -9,9 +9,7 @@ class TmpUserModel extends AppModel {
     public $attributes = [
         'token' => '',
         'type' => '',
-        'user_id' => '',
         'expired' => '',
-        'email' => '',
         'meta' => '',
     ];
 
@@ -19,11 +17,16 @@ class TmpUserModel extends AppModel {
         'required' => [
             ['token', 'type', 'expired'],
         ],
-        'email' => [
-            ['email'],
-        ],
         'in' => [
-            ['type', ['REGISTRATION', 'CHANGE_PASSWORD', 'CREATE_PASSWORD', 'RESET_PASSWORD']]
+            ['type', [
+                'REGISTRATION', 
+                'CHANGE_PASSWORD', 
+                'CHANGE_EMAIL',
+                'NEW_EMAIL',
+                'CREATE_PASSWORD', 
+                'RESET_PASSWORD'
+                ]
+            ]
         ]
     ];
 
@@ -39,22 +42,6 @@ class TmpUserModel extends AppModel {
     }
 
     public function saveTmpUser($data) {
-        $token = $data['token'];
-        $type = $data['type'];
-        $expired = $data['expired'];
-        $email = $data['email'];
-
-        $duplicates = $this->getAllByEmail($email);
-
-        // delete duplicates
-        if (!empty($duplicates)) {
-            foreach ($duplicates as $item) {
-                if ($item['type'] === $type) {
-                    $this->deleteById($item['id']);
-                }
-            }
-        }
-
         $this->load($data);
 
         if ($this->validate()) {
@@ -78,10 +65,16 @@ class TmpUserModel extends AppModel {
         $res = $this->findOne($token, 'token');
 
         if (!empty($res)) {
-            return $res[0];
+            $tmp_user = $res[0];
+
+            if (isExpired($tmp_user['expired'])) {
+                $this->deleteById($tmp_user['id']);
+            } else {
+                return $tmp_user;
+            }
         } 
 
-        return null;
+        return false;
     }
 
     public function newFromToken($token) {
