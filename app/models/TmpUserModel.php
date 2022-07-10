@@ -30,17 +30,6 @@ class TmpUserModel extends AppModel {
         ]
     ];
 
-    public function getAllByEmail($email) {
-        $sql = "
-            SELECT * FROM {$this->table}
-            WHERE email = ?
-        ";
-        
-        $res = $this->db->query($sql, [$email]);
-
-        return $res;
-    }
-
     public function saveTmpUser($data) {
         $this->load($data);
 
@@ -61,7 +50,26 @@ class TmpUserModel extends AppModel {
         $this->db->execute($sql, [$id]);
     }
 
+    public function clearExpiredItems() {
+        $all = $this->findAll();
+
+        if (!empty($all)) {
+            foreach ($all as $item) {
+                debug($item);
+                if (isExpired($item['expired'])) {
+                    $this->deleteById($item['id']);
+                }
+            }
+        }
+    }
+
     public function findByToken($token) {
+        $count = $this->count($token);
+
+        if ($count > 2) {
+            $this->clearExpiredItems();
+        }
+        
         $res = $this->findOne($token, 'token');
 
         if (!empty($res)) {
@@ -72,9 +80,26 @@ class TmpUserModel extends AppModel {
             } else {
                 return $tmp_user;
             }
-        } 
+        }
 
         return false;
+    }
+
+    public function count($token) {
+        $sql = "
+            SELECT count(*) as total 
+            FROM {$this->table}
+        ";
+        
+        $res = $this->db->query($sql, [$token]);
+
+        if (!empty($res)) {
+            $total = $res[0]['total'];
+            
+            return $total;
+        }
+
+        return 0;
     }
 
     public function newFromToken($token) {

@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use core\Tone;
 use app\services\GoogleAuth;
+use app\services\Mailer;
 use app\models\UserModel;
 use app\models\TmpUserModel;
 
@@ -62,8 +63,9 @@ class UserController extends AppController {
             $data = $_POST;
 
             if ($data['email'] && $data['password']) {
+                $email = $data['email'];
                 $user_model = new UserModel();
-                $duplicate = $user_model->findByEmail($data['email']);
+                $duplicate = $user_model->findByEmail($email);
                 
                 if ($duplicate) {
                     $_SESSION['errors'] = 'This email already exists';
@@ -73,7 +75,7 @@ class UserController extends AppController {
                     $password_hash = password_hash($data['password'], PASSWORD_DEFAULT);
                     $meta = [
                         'password_hash' => $password_hash,
-                        'email' => $data['email'],
+                        'email' => $email,
                     ];
                     $meta = json_encode($meta);
                     $newData = [
@@ -85,9 +87,14 @@ class UserController extends AppController {
                     $saved = $tmp_user_model->saveTmpUser($newData);
 
                     if ($saved) {
-                        $href = baseUrl() . "user/registerWithPassword?token=" . $token;
-                        $url = "<a href='" . $href . "'>Підтвердити</a>";
-                        $_SESSION['success'] =  $url . $href;
+                        $href = baseUrl() . "user/register-with-password?token=" . $token;
+                        $mailer = new Mailer();
+                        $mailer->loadView('pages/User/mail/register-with-password', [
+                            'href' => $href,
+                        ]);
+                        $mailer->send('Реєстрація', 'HI-EDDY', $email);
+
+                        redirect(baseUrl() . 'user/registration-check-email');
                     }
                 }
             }
@@ -193,8 +200,13 @@ class UserController extends AppController {
 
                     if ($saved) {
                         $href = baseUrl() . "user/create-password?token=" . $token;
-                        $url = "<a href='" . $href . "'>Підтвердити</a>";
-                        $_SESSION['success'] =  $url . $href;
+                        $mailer = new Mailer();
+                        $mailer->loadView('pages/User/mail/reset-password', [
+                            'href' => $href,
+                        ]);
+                        $mailer->send('Зкидання паролю', 'HI-EDDY', $email);
+
+                        redirect(baseUrl() . 'user/reset-password-check-email');
                     } else {
                         $_SESSION['errors'] = "Щось пішло не так.";
                     }
@@ -204,8 +216,26 @@ class UserController extends AppController {
             }
 
             redirect();
+        } else {
+            $email = '';
+            
+            if (isUser()) {
+                $email = $_SESSION['user']['email'];
+            }
+
+            $this->set(compact('email'));
         }
     }
+
+    public function resetPasswordCheckEmailAction() {}
+
+    public function resetPasswordSuccessAction() {}
+
+    public function registrationCheckEmailAction() {}
+
+    public function changeEmailCheckEmailAction() {}
+
+    public function newEmailCheckEmailAction() {}
 
     public function confirmNewEmailAction() {
         $user = $_SESSION['user'] ?? null;
@@ -231,7 +261,7 @@ class UserController extends AppController {
                         if ($updated) {
                             $tmp_user_model->deleteById($tmp_user['id']);
 
-                            $_SESSION['success'] = 'Пошту успішно оновлено.';
+                            $_SESSION['success'] = 'Пошту успішно підтверджено!';
                             redirect(baseUrl() . 'profile');
                         }
                     }
@@ -284,11 +314,15 @@ class UserController extends AppController {
     
                         if ($saved) {
                             $tmp_user_model->deleteById($tmp_user['id']);
+
                             $href = baseUrl() . "user/confirm-new-email?token=" . $newToken;
-                            $url = "<a href='" . $href . "'>Підтвердити</a>";
-                            $_SESSION['success'] =  $url . $href;
-    
-                            redirect(baseUrl() . 'profile');
+                            $mailer = new Mailer();
+                            $mailer->loadView('pages/User/mail/new-email', [
+                                'href' => $href,
+                            ]);
+                            $mailer->send('Новий email', 'HI-EDDY', $newEmail);
+                            
+                            redirect(baseUrl() . 'user/new-email-check-email');
                         } else {
                             $_SESSION['errors'] = "Щось пішло не так.";
                         }
@@ -328,10 +362,11 @@ class UserController extends AppController {
         $user = $_SESSION['user'] ?? null;
 
         if ($user && !empty($_POST)) {
+            $email = $user['email'];
             $tmp_user_model = new TmpUserModel();
             $token = password_hash(rand(), PASSWORD_DEFAULT);
             $meta = [
-                'email' => $user['email'],
+                'email' => $email,
             ];
             $meta = json_encode($meta);
 
@@ -345,8 +380,13 @@ class UserController extends AppController {
 
             if ($saved) {
                 $href = baseUrl() . "user/new-email?token=" . $token;
-                $url = "<a href='" . $href . "'>Підтвердити</a>";
-                $_SESSION['success'] =  $url . $href;
+                $mailer = new Mailer();
+                $mailer->loadView('pages/User/mail/change-email', [
+                    'href' => $href,
+                ]);
+                $mailer->send('Зміна email', 'HI-EDDY', $email);
+
+                redirect(baseUrl() . 'user/change-email-check-email');
             } else {
                 $_SESSION['errors'] = "Щось пішло не так.";
             }
@@ -374,10 +414,14 @@ class UserController extends AppController {
                 $updated = $user_model->updatePasswordByEmail($password, $email);
             
                 if ($updated) {
-                    $_SESSION['success'] = 'Пароль був оновлений!.';
                     $tmp_user_model->deleteById($user['id']);
 
-                    redirect(baseUrl() . 'login');
+                    if (isUser()) {
+                        $_SESSION['success'] = 'Пароль було оновлено!';
+                        redirect(baseUrl() . 'profile');
+                    }
+                    
+                    redirect(baseUrl() . 'user/reset-password-success');
                 } else {
                     $_SESSION['errors'] = 'Щось пішло не так. Почніть процес з початку.';
                 }
@@ -397,6 +441,10 @@ class UserController extends AppController {
                     $this->set(compact('token'));
                 } else {
                     $_SESSION['errors'] = 'Посилання вже не актуально. Почніть процес з початку.';
+                    
+                    if (isUser()) {
+                        redirect(baseUrl() . 'profile');
+                    }
                     redirect(baseUrl() . 'login');
                 }
             }

@@ -110,9 +110,7 @@
       </h4>
       <!-- END. title -->
       <div class="g-spacer-2"></div>
-      <p><a href="<?=baseUrl() . "create-password"?>">Створити пароль</a></p>
-      <div class="g-spacer-2"></div>
-      <p><a href="<?=baseUrl() . "change-password"?>">Змінити пароль</a></p>
+      <p><a href="<?=baseUrl() . "reset-password"?>">Зкинути пароль</a></p>
    </div>
    <!-- END. __layout-main -->
    <!-- __layout-tariff-status -->

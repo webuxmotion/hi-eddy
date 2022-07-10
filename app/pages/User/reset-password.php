@@ -17,7 +17,15 @@
         <!-- input -->
         <div class="input" data-name="getInput">
           <label for="email" class="input__label">E-mail</label>
-          <input type="email" name="email" id="email" class="input__input-field" placeholder=" " value="" required="true">
+          <input 
+            type="email" 
+            name="email" 
+            id="email" 
+            class="input__input-field" 
+            placeholder=" " 
+            value="<?=$email?>" 
+            required="true"
+          >
         </div>
         <!-- END. input -->
         <div class="g-spacer-4"></div>
