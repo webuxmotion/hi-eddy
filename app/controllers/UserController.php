@@ -37,7 +37,7 @@ class UserController extends AppController {
                 if (password_verify($data['password'], $duplicate['password'])) {
                     $loginned = $user_model->loginUser($duplicate);
                     if ($loginned) {
-                        $_SESSION['success'] = 'Welcome!';
+                        $_SESSION['success'] = 'Ви успішно авторизовані!';
                         if (isset($_GET['redirectTo'])) {
                             redirect($_GET['redirectTo']);
                         } else {

@@ -1509,6 +1509,34 @@ p a:hover {
 .logo__text {
   margin-left: 6px;
 }
+.message {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--transparent-hover);
+  padding: 10px 40px;
+  padding-right: 20px;
+  border-radius: var(--border-radius);
+}
+
+.message.is-success {
+  background-color: #cfffcf;
+  color: green;
+}
+
+.message.is-danger {
+  background-color: #ffdcdc;
+  color: red;
+}
+
+.message.is-close {
+  display: none;
+}
+
+.message__text {
+  padding-right: 20px;
+}
 .modal {
   position: fixed;
   top: 0;
