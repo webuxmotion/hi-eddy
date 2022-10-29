@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: hi-eddy-mysql-app:3306
--- Generation Time: Jun 04, 2022 at 09:01 AM
+-- Generation Time: Jul 10, 2022 at 09:40 PM
 -- Server version: 5.7.38
 -- PHP Version: 7.2.2
 
@@ -233,12 +233,27 @@ INSERT INTO `task_question_description` (`id`, `task_question_id`, `lang_id`, `t
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tmp_user`
+--
+
+CREATE TABLE `tmp_user` (
+  `id` int(11) NOT NULL,
+  `token` varchar(256) NOT NULL,
+  `type` enum('REGISTRATION','CHANGE_PASSWORD','CREATE_PASSWORD','RESET_PASSWORD','CHANGE_EMAIL','NEW_EMAIL') NOT NULL,
+  `expired` varchar(256) NOT NULL,
+  `meta` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `email` varchar(256) NOT NULL,
+  `password` varchar(256) DEFAULT NULL,
   `firstName` varchar(256) DEFAULT NULL,
   `lastName` varchar(256) DEFAULT NULL,
   `phone` varchar(256) DEFAULT NULL,
@@ -314,6 +329,12 @@ ALTER TABLE `task_question_description`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tmp_user`
+--
+ALTER TABLE `tmp_user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -385,10 +406,16 @@ ALTER TABLE `task_question_description`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `tmp_user`
+--
+ALTER TABLE `tmp_user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=126;
+
+--
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

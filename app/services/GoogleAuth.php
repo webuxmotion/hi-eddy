@@ -42,7 +42,7 @@ class GoogleAuth {
 
                 $user_model = new UserModel();
                 $user_model->saveGoogleUser($data);
-                $_SESSION['success'] = "You is loginned!";
+                $_SESSION['success'] = "Ви успішно увійшли!";
             } else {
                 $_SESSION['errors'] = "Some trouble with Google Authentication";
             }

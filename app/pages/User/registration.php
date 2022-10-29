@@ -1,23 +1,23 @@
-<!-- p-login -->
-<div class="p-login">
+<!-- p-registration -->
+<div class="p-registration">
   <!-- auth -->
   <div class="auth" data-name="getAuth">
     <div class="auth__title-wrapper">
       <!-- title -->
       <h1 class="title  " data-name="getTitle">
-        Вхід на сайт
+        Реєстрація
       </h1>
       <!-- END. title -->
     </div>
     <div class="auth__text">
-      Авторизуйтесь на сайті,<br>
+      Зареєструйтесь на сайті,<br>
       щоб мати можливість додавати уроки, <br>
       що сподобалися, в Збережені
     </div>
     <div class="auth__content">
       <!-- title -->
       <h3 class="title  " data-name="getTitle">
-        Вхід через Google
+        За допомогою Google
       </h3>
       <!-- END. title -->
       <div class="g-spacer-3"></div>
@@ -31,17 +31,17 @@
             <path d="M8.13321 22.3489C6.1709 23.9576 4.20448 25.5663 2.24217 27.1791C0.333342 23.8753 -0.271394 20.2959 0.10708 16.5436C0.337456 14.2561 0.933965 12.059 2.09819 10.043C4.0934 11.6435 6.08451 13.244 8.07973 14.8444C7.33512 17.35 7.38037 19.8515 8.13321 22.3489Z" fill="#F0BE42"></path>
           </svg>
         </span>
-        <span class="button__text">Увійти з Google</span>
+        <span class="button__text">Продовжити з Google</span>
       </a>
       <!-- END. button -->
       <div class="g-spacer-5"></div>
       <!-- title -->
       <h3 class="title  " data-name="getTitle">
-        aбо <br><br>вхід через email та пароль
+        aбо <br><br>реєстрація через email та пароль
       </h3>
       <!-- END. title -->
       <div class="g-spacer-3"></div>
-      <form class="auth__form" method="POST" action="<?=$form_action?>">
+      <form class="auth__form" method="POST" action="/user/registerWithPassword">
         <!-- input -->
         <div class="input" data-name="getInput">
           <label for="email" class="input__label">E-mail</label>
@@ -58,16 +58,14 @@
         <div class="g-spacer-4"></div>
         <!-- button -->
         <button class="button button--border-radius button--font-medium " data-name="getButton">
-        <span class="button__text">Увійти</span>
+        <span class="button__text">Зареєструватися</span>
         </button>
         <!-- END. button -->
-        <div class="g-spacer-5"></div>
-        <p>Ще нема аккаунту? <a href="<?=baseUrl() . "registration"?>">Зареєструватись</a></p>
         <div class="g-spacer-8"></div>
-        <p>Забули пароль? <a href="<?=baseUrl() . "reset-password"?>">Зкинути пароль</a></p>
+        <p>Вже маєте свій аккаунт? <a href="<?=baseUrl() . "login?redirectTo=profile"?>">Увійти на сайт</a></p>
       </form>
     </div>
   </div>
   <!-- END. auth -->
 </div>
-<!-- END. p-login -->
+<!-- END. p-registration -->

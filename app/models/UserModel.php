@@ -8,6 +8,7 @@ class UserModel extends AppModel {
     
     public $attributes = [
         'email' => '',
+        'password' => '',
         'firstName' => '',
         'lastName' => '',
         'avatar' => '',
@@ -23,10 +24,10 @@ class UserModel extends AppModel {
         ]
     ];
 
-    public function findDuplicate($key, $value) {
+    public function findByEmail($value) {
         $sql = "
             SELECT * FROM {$this->table}
-            WHERE {$key} = ?
+            WHERE email = ?
         ";
         
         $res = $this->db->query($sql, [$value]);
@@ -44,6 +45,12 @@ class UserModel extends AppModel {
                 $_SESSION['user'][$k] = $v;
             }
         }
+    }
+
+    public function loginUser($user) {
+        $this->setSessionUser($user);
+
+        return !empty($_SESSION['user']);
     }
 
     public function saveGoogleUser($data) {
@@ -70,6 +77,46 @@ class UserModel extends AppModel {
             $res = $this->findOne($email, 'email');
             $this->setSessionUser($res[0]);
         }
+    }
+
+    public function saveUser($data) {
+        $this->load($data);
+        if ($this->validate()) {
+            return $this->save();
+        }
+        return false;
+    }
+
+    public function updateEmail($email, $newEmail) {
+        $res = $this->findOne($email, 'email');
+
+        if (!empty($res) && !empty($res[0])) {
+            $user = $res[0];
+            $id = $user['id'];
+
+            $sql = "
+                UPDATE user
+                SET 
+                    email = ?
+                WHERE 
+                    id = ?
+            ";
+
+            $this->db->execute($sql, [
+                $newEmail, 
+                $id
+            ]);
+
+            $newRes = $this->findOne($newEmail, 'email');
+
+            if (!empty($newRes)) {
+                $this->setSessionUser($newRes[0]);
+
+                return true;
+            }
+        }
+        
+        return false;
     }
 
     public function updateProfile($data) {
@@ -116,6 +163,31 @@ class UserModel extends AppModel {
 
                 return true;
             }
+        }
+
+        return false;
+    }
+
+    public function updatePasswordByEmail($password, $email) {
+        $res = $this->findOne($email, 'email');
+
+        if (!empty($res)) {
+            $hash = password_hash($password, PASSWORD_DEFAULT);
+
+            $sql = "
+                UPDATE user
+                SET 
+                    password = ?
+                WHERE 
+                    email = ?
+            ";
+
+            $this->db->execute($sql, [
+                $hash, 
+                $email,
+            ]);
+
+            return true;
         }
 
         return false;
