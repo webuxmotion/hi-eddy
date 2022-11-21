@@ -1,46 +1,44 @@
-version: "3.2"
+version: "3.8"
 services:
-  php:
-    build:
-      context: .
-    image: author/hi-eddy:1.0.0
-    networks:
-      - frontend
-      - backend
-    environment:
-      - MYSQL_HOST=hi-eddy-mysql-app
-      - MYSQL_USER=user
-      - MYSQL_PASSWORD=password
-      - MYSQL_DB=starter_kit_db
-    volumes:
-      - ./:/var/www/html/
-    ports:
-      - "40001:80"
-    container_name: hi-eddy-app
-  mysql:
-    image: mysql:5.7
-    networks:
-      - backend
-    environment:
-      - MYSQL_ROOT_PASSWORD=rootpassword
-      - MYSQL_USER=user
-      - MYSQL_PASSWORD=password
-      - MYSQL_DATABASE=starter_kit_db
-    container_name: hi-eddy-mysql-app
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin:4.7
-    depends_on:
-      - mysql
-    networks:
-      - backend
-    ports:
-      - "40002:80"
-    environment:
-      - PMA_HOST=hi-eddy-mysql-app
-      - PMA_PORT=3306
-    volumes:
-      - /sessions
-    container_name: hi-eddy-phpmyadmin-app
+
+    # PHP service
+    app:
+        build: .
+        container_name: eight-green-jumpers-framework-php-app
+        working_dir: /var/www/
+        volumes:
+            - ./:/var/www
+        networks:
+            - app-network
+
+    # MySQL database service
+    db:
+        image: mysql:5.7
+        container_name: eight-green-jumpers-framework-mysql-db
+        ports:
+            - "5306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+            MYSQL_DATABASE: ${DB_DATABASE}
+            MYSQL_USER: ${DB_USERNAME}
+            MYSQL_PASSWORD: ${DB_PASSWORD}
+        env_file:
+            - ./.env
+        networks:
+            - app-network
+
+    # Nginx service
+    nginx:
+        image: nginx:alpine
+        container_name: eight-green-jumpers-framework-php-nginx
+        ports:
+            - 5000:80
+        volumes:
+            - ./:/var/www
+            - ./nginx/conf.d/:/etc/nginx/conf.d/
+        networks:
+            - app-network
+
 networks:
-  frontend:
-  backend:
+    app-network:
+        driver: bridge

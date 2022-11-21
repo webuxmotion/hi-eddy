@@ -8,6 +8,7 @@ use app\services\LiqPay;
 class MainController extends AppController {
     
     public function indexAction() {
+        
         // $liqpay = new LiqPay(
         //     $_ENV['LIQPAY_PUBLIC_KEY'], 
         //     $_ENV['LIQPAY_PRIVATE_KEY']
