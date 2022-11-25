@@ -72,7 +72,7 @@
       <div class="sidebar__divider"></div>
       <div class="sidebar__group">
         <!-- sidebar-button -->
-        <a href="#" class="sidebar-button">
+        <a href="<?=baseUrl()?>lessons?pinned=true" class="sidebar-button">
           <span class="sidebar-button__icon" data-icon="saved">
     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" clip-rule="evenodd" d="M6.75 4.59375V18.3207L10.97 15.6832C11.2943 15.4805 11.7057 15.4805 12.03 15.6832L16.25 18.3207V4.59375H6.75ZM5.25341 3.09716C5.57573 2.77485 6.0129 2.59375 6.46875 2.59375H16.5312C16.9871 2.59375 17.4242 2.77483 17.7466 3.09714C18.069 3.41954 18.25 3.85675 18.25 4.3125V20.125C18.25 20.4885 18.0527 20.8234 17.7348 20.9996C17.4168 21.1759 17.0283 21.1657 16.72 20.973L11.5 17.7105L6.28 20.973C5.97174 21.1657 5.58319 21.1759 5.26523 20.9996C4.94728 20.8234 4.75 20.4885 4.75 20.125V4.3125C4.75 3.85665 4.9311 3.41948 5.25341 3.09716Z" fill="#9747FF"></path>
@@ -85,7 +85,7 @@
         </a>
         <!-- END. sidebar-button -->
         <!-- sidebar-button -->
-        <a href="#" class="sidebar-button">
+        <a href="<?=baseUrl()?>lessons?done=true" class="sidebar-button">
           <span class="sidebar-button__icon" data-icon="paw">
     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M18.2188 11C19.168 11 19.9375 10.2305 19.9375 9.28125C19.9375 8.33201 19.168 7.5625 18.2188 7.5625C17.2695 7.5625 16.5 8.33201 16.5 9.28125C16.5 10.2305 17.2695 11 18.2188 11Z" stroke="#9747FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -116,25 +116,8 @@
         </div>
       </div>
       <div class="sidebar__lang-switcher-wrapper">
-        
-    <!-- lang-switcher -->
-    <div class="lang-switcher" data-name="langSwitcherVariant1">
-      <div class="lang-switcher__main">
-        <span class="lang-switcher__icon" data-icon="lang">
-  <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M18.5 36C28.165 36 36 28.165 36 18.5C36 8.83502 28.165 1 18.5 1C8.83502 1 1 8.83502 1 18.5C1 28.165 8.83502 36 18.5 36Z" stroke="#9747FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-    <path d="M1 18.5H36" stroke="#9747FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-    <path d="M18.8368 1C23.2562 5.79212 25.7677 12.0111 25.9041 18.5C25.7677 24.9889 23.2562 31.2079 18.8368 36C14.4175 31.2079 11.906 24.9889 11.7695 18.5C11.906 12.0111 14.4175 5.79212 18.8368 1V1Z" stroke="#9747FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-  </svg>
-  </span>
-        <span class="lang-switcher__text">UKR</span>
-      </div>
-      <select id="lang-swither" class="lang-switcher__select">
-        <option value="UKR" selected="">UKR</option>
-        <option value="ENG">ENG</option>
-      </select>
-    </div>
-    <!-- END. lang-switcher -->
+        <?php new \app\widgets\language\Language() ?>
+    
   
       </div>
     </div>

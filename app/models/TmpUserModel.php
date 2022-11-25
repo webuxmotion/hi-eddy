@@ -64,7 +64,7 @@ class TmpUserModel extends AppModel {
     }
 
     public function findByToken($token) {
-        $count = $this->count($token);
+        $count = $this->count();
 
         if ($count > 2) {
             $this->clearExpiredItems();
@@ -85,13 +85,13 @@ class TmpUserModel extends AppModel {
         return false;
     }
 
-    public function count($token) {
+    public function count() {
         $sql = "
             SELECT count(*) as total 
             FROM {$this->table}
         ";
         
-        $res = $this->db->query($sql, [$token]);
+        $res = $this->db->query($sql);
 
         if (!empty($res)) {
             $total = $res[0]['total'];
