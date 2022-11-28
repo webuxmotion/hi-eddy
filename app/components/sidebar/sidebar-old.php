@@ -10,6 +10,7 @@
       'title' => __('tpl_lessons'),
       'icon' => 'lesson'
     ])?>
+    
     <!-- <?=$this->component('button-sidebar', [
       'href' => baseUrl() . 'lessons',
       'title' => __('tpl_courses'),

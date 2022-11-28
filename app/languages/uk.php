@@ -13,6 +13,7 @@ return [
     'tpl_done_lessons' => 'Завершені уроки',
     'tpl_all_lessons' => 'Всі уроки',
     'tpl_lessons' => 'Уроки',
+    'tpl_courses' => 'Курси',
     'tpl_to_main_page' => 'На головну сторінку',
     'tpl_logout' => 'Вийти',
     'tpl_save' => 'Зберегти',
@@ -22,5 +23,7 @@ return [
     'tpl_all' => 'Всі',
     'tpl_pinned' => 'Запінені',
     'tpl_finished' => 'Завершені',
-    'tpl_saved' => 'Збережені'
+    'tpl_saved' => 'Збережені',
+    'tpl_help_army' => 'Допомога ЗСУ',
+    'tpl_more_details' => 'Детальніше'
 ];

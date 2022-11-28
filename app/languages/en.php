@@ -13,6 +13,7 @@ return [
     'tpl_done_lessons' => 'Finished lessons',
     'tpl_all_lessons' => 'All lessons',
     'tpl_lessons' => 'Lessons',
+    'tpl_courses' => 'Courses',
     'tpl_to_main_page' => 'To main page',
     'tpl_logout' => 'Logout',
     'tpl_save' => 'Save',
@@ -22,5 +23,7 @@ return [
     'tpl_all' => 'All',
     'tpl_pinned' => 'Pinned',
     'tpl_finished' => 'Finished',
-    'tpl_saved' => 'Saved'
+    'tpl_saved' => 'Saved',
+    'tpl_help_army' => 'Help Ukraine',
+    'tpl_more_details' => 'More details'
 ];

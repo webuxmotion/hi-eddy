@@ -1,16 +1,19 @@
-<a href="<?=$href?>" class="lesson-card">
+<!-- lesson-card -->
+<div class="lesson-card" data-name="getLessonCard">
+  <a href="<?= $href ?>" class="lesson-card__image" style="background-image: url('<?= $image ?>');"></a>
+  <div class="lesson-card__main">
+    <a href="<?= $href ?>" class="lesson-card__title"><?= $title ?></a>
+    <div class="lesson-card__button">
 
-  <?php if ($item['has_pin']): ?>
-    <span class="lesson-card__icon lesson-card__icon--pin">
-      <?=icon('pin-color')?>
-    </span>
-  <?php endif; ?>
-  
-  <?php if ($item['has_done']): ?>
-    <span class="lesson-card__icon lesson-card__icon--done">
-      <?=icon('check-color')?>
-    </span>
-  <?php endif; ?>
+      <!-- button -->
+      <a href="<?= $href ?>" class="button button--border-radius " data-name="getButton">
 
-  <?=$item['title']?>
-</a>
+        <span class="button__text"><?=__('tpl_more_details')?></span>
+
+      </a>
+      <!-- END. button -->
+
+    </div>
+  </div>
+</div>
+<!-- END. lesson-card -->
