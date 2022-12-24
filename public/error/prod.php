@@ -7,6 +7,6 @@
   <title>Some Error</title>
 </head>
 <body>
-  <h1>Произошла ошибка</h1>
+  <h1>Сталася помилка</h1>
 </body>
 </html>

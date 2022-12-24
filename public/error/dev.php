@@ -7,7 +7,7 @@
   <title>Error</title>
 </head>
 <body>
-  <h1>Произошла ошибка</h1>
+  <h1>Сталася помилка</h1>
   <p>Code: <?=$no?></p>
   <p>Message: <?=$str?></p>
   <p>File: <?=$file?></p>
