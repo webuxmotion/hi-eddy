@@ -2,6 +2,8 @@
 
 use core\Router;
 
+Router::add('^lessons/(?P<action>[a-z-]+)/(?P<id>[0-9]+)$', ['controller' => 'Lessons']);
+
 Router::add('^(?P<lang>[a-z]{2}+)?/?lessons/?$', ['controller' => 'Lessons', 'action' => 'list']);
 Router::add('^(?P<lang>[a-z]{2}+)?/?lessons/(?P<alias>[a-z-]+)?$', ['controller' => 'Lessons', 'action' => 'one-item']);
 
