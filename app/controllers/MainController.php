@@ -6,6 +6,10 @@ use core\Tone;
 use app\services\LiqPay;
 
 class MainController extends AppController {
+    public function emailAction() {
+        echo $this->loadView('pages/Main/mail/send-email');
+        die;
+    }
     
     public function indexAction() {
         

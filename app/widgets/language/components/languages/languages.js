@@ -1,4 +1,4 @@
-document.getElementById('languages').addEventListener('click', (event) => {
+document.getElementById('languages')?.addEventListener('click', (event) => {
   let buttonElement = null;
 
   if (event.target.classList.contains('js-dropdown-item')) {

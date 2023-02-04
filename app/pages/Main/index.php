@@ -8,9 +8,14 @@
         <h1 class="hero__title">Академія hi-eddy <br>вітає вас</h1>
         <h2 class="hero__subtitle">В нас є 2 курси з програмування</h2>
         <div class="hero__button-wrapper">
+
+          <button class="button button--border-radius button--font-medium js-send-email" data-name="getButton">
+            <span class="button__text">Надіслати email</span>
+          </button>
+
           <!-- button -->
           <a href="./pages/courses/courses.html" class="button button--fullwidth button--border-radius " data-name="getButton">
-          <span class="button__text">Дивитись курси</span>
+            <span class="button__text">Дивитись курси</span>
           </a>
           <!-- END. button -->
         </div>
@@ -133,14 +138,14 @@
           <div class="course-card__button-wrapper">
             <!-- button -->
             <a href="./pages/course-about/course-about.html" class="button button--border-radius " data-name="getButton">
-            <span class="button__text">Про курс</span>
+              <span class="button__text">Про курс</span>
             </a>
             <!-- END. button -->
           </div>
           <div class="course-card__button-wrapper">
             <!-- button -->
             <a href="./pages/one-course/one-course.html" class="button button--border-radius button--bordered " data-name="getButton">
-            <span class="button__text">Почати</span>
+              <span class="button__text">Почати</span>
             </a>
             <!-- END. button -->
           </div>
@@ -188,14 +193,14 @@
           <div class="course-card__button-wrapper">
             <!-- button -->
             <a href="./pages/course-about/course-about.html" class="button button--border-radius " data-name="getButton">
-            <span class="button__text">Про курс</span>
+              <span class="button__text">Про курс</span>
             </a>
             <!-- END. button -->
           </div>
           <div class="course-card__button-wrapper">
             <!-- button -->
             <a href="./pages/one-course/one-course.html" class="button button--border-radius button--bordered " data-name="getButton">
-            <span class="button__text">Почати</span>
+              <span class="button__text">Почати</span>
             </a>
             <!-- END. button -->
           </div>
@@ -231,7 +236,7 @@
             <div class="lesson-card__button">
               <!-- button -->
               <a href="./pages/one-lesson/one-lesson.html" class="button button--border-radius " data-name="getButton">
-              <span class="button__text">Детальніше</span>
+                <span class="button__text">Детальніше</span>
               </a>
               <!-- END. button -->
             </div>
@@ -248,7 +253,7 @@
             <div class="lesson-card__button">
               <!-- button -->
               <a href="./pages/one-lesson/one-lesson.html" class="button button--border-radius " data-name="getButton">
-              <span class="button__text">Детальніше</span>
+                <span class="button__text">Детальніше</span>
               </a>
               <!-- END. button -->
             </div>
@@ -265,7 +270,7 @@
             <div class="lesson-card__button">
               <!-- button -->
               <a href="./pages/one-lesson/one-lesson.html" class="button button--border-radius " data-name="getButton">
-              <span class="button__text">Детальніше</span>
+                <span class="button__text">Детальніше</span>
               </a>
               <!-- END. button -->
             </div>
@@ -305,7 +310,7 @@
             </div>
           </div>
           <div class="faq__answer">
-            <p>Ні, оплата знімається один раз при оплаті тарифного плану. 
+            <p>Ні, оплата знімається один раз при оплаті тарифного плану.
               Після закінчення тарифного плану ви зможете самостійно його продовжити або вибрати інший тарифний план.
             </p>
           </div>
@@ -327,7 +332,7 @@
             </div>
           </div>
           <div class="faq__answer">
-            <p>Ні, оплата знімається один раз при оплаті тарифного плану. 
+            <p>Ні, оплата знімається один раз при оплаті тарифного плану.
               Після закінчення тарифного плану ви зможете самостійно його продовжити або вибрати інший тарифний план.
             </p>
           </div>

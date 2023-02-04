@@ -44,7 +44,7 @@
   </script>
   
 
-  <script src="https://ui.hi-eddy.com/dist/main.js"></script>
+  <script src="/dist/app.js"></script>
   <?=$scripts?>
 </body>
 </html>

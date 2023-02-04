@@ -15,7 +15,7 @@
   \*******************************************************/
 /***/ (() => {
 
-eval("const element = document.querySelector('.js-go-top-button');\n\nif (element) {\n    element.addEventListener('click', () => {\n        window.scrollTo({ top: 0 });\n    });\n}\n\n//# sourceURL=webpack://starter-kit/./app/components/go-top-button/go-top-button.js?");
+eval("const element = document.querySelector('.js-go-top-button');\n\nif (element) {\n    element.addEventListener('click', () => {\n        window.scrollTo({ top: 0 });\n    });\n}\n\nconst button = document.querySelector('.js-send-email');\n\nif (button) {\n    button.addEventListener('click', () => {\n        console.log('send email');\n        fetch('/api/send-email')\n            .then((response) => response.json())\n            .then((data) => console.log(data));\n    });\n}\n\n//# sourceURL=webpack://starter-kit/./app/components/go-top-button/go-top-button.js?");
 
 /***/ }),
 
@@ -57,7 +57,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var high
   \****************************************************************/
 /***/ (() => {
 
-eval("document.getElementById('languages').addEventListener('click', (event) => {\n  let buttonElement = null;\n\n  if (event.target.classList.contains('js-dropdown-item')) {\n    buttonElement = event.target;\n  } else if (event.target.closest('.js-dropdown-item')) {\n    buttonElement = event.target.closest('.js-dropdown-item');\n  }\n\n  if (buttonElement) {\n    const langCode = buttonElement.dataset.code;\n    window.location = PATH + '/language/change?lang=' + langCode;\n  }\n});\n\n\n//# sourceURL=webpack://starter-kit/./app/widgets/language/components/languages/languages.js?");
+eval("document.getElementById('languages')?.addEventListener('click', (event) => {\n  let buttonElement = null;\n\n  if (event.target.classList.contains('js-dropdown-item')) {\n    buttonElement = event.target;\n  } else if (event.target.closest('.js-dropdown-item')) {\n    buttonElement = event.target.closest('.js-dropdown-item');\n  }\n\n  if (buttonElement) {\n    const langCode = buttonElement.dataset.code;\n    window.location = PATH + '/language/change?lang=' + langCode;\n  }\n});\n\n\n//# sourceURL=webpack://starter-kit/./app/widgets/language/components/languages/languages.js?");
 
 /***/ }),
 
