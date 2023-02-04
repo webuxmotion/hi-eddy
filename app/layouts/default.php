@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;500;600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/styles/<?=codeTheme()?>.min.css">
-  <link rel="stylesheet" href="https://ui.hi-eddy.com/dist/styles.css">
+  <link rel="stylesheet" href="/ui/styles.css">
   <style>
     .debug {
       z-index: 100000;
@@ -44,7 +44,8 @@
   </script>
   
 
-  <script src="/dist/app.js"></script>
+  
+  <script src="/ui/main.js"></script>
   <?=$scripts?>
 </body>
 </html>
