@@ -4,7 +4,7 @@ namespace app\controllers;
 
 class PricesController extends AppController {
     
-    public function listAction() {
+    public function indexAction() {
         $this->setMeta(
            "Prices Page"
         );

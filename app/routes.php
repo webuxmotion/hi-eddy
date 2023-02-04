@@ -4,6 +4,8 @@ use core\Router;
 
 Router::add('^lessons/(?P<action>[a-z-]+)/(?P<id>[0-9]+)$', ['controller' => 'Lessons']);
 
+Router::add('^(?P<lang>[a-z]{2}+)?/?prices/?$', ['controller' => 'Prices', 'action' => 'index']);
+
 Router::add('^(?P<lang>[a-z]{2}+)?/?lessons/?$', ['controller' => 'Lessons', 'action' => 'list']);
 Router::add('^(?P<lang>[a-z]{2}+)?/?lessons/(?P<alias>[a-z-]+)?$', ['controller' => 'Lessons', 'action' => 'one-item']);
 
@@ -16,8 +18,6 @@ Router::add('^(?P<lang>[a-z]{2}+)?/?payment-and-delivery/?$', ['controller' => '
 Router::add('^(?P<lang>[a-z]{2}+)?/?contacts/?$', ['controller' => 'Pages', 'action' => 'contacts']);
 Router::add('^(?P<lang>[a-z]{2}+)?/?sponsors/?$', ['controller' => 'Pages', 'action' => 'sponsors']);
 Router::add('^(?P<lang>[a-z]{2}+)?/?command/?$', ['controller' => 'Pages', 'action' => 'command']);
-
-Router::add('^(?P<lang>[a-z]{2}+)?/?prices/?$', ['controller' => 'Prices', 'action' => 'list']);
 
 Router::add('^(?P<lang>[a-z]{2}+)?/?login/?$', ['controller' => 'User', 'action' => 'login']);
 Router::add('^(?P<lang>[a-z]{2}+)?/?registration/?$', ['controller' => 'User', 'action' => 'registration']);

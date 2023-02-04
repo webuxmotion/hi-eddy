@@ -29,7 +29,7 @@
       <!-- END. nav-item -->
       <!-- nav-item -->
       <div class="nav-item">
-        <a href="./pages/prices/prices.html" class="nav-item__control">
+        <a href="<?=baseUrl() . "prices"?>" class="nav-item__control">
         <span class="nav-item__text">Ціни</span>
         </a>
       </div>

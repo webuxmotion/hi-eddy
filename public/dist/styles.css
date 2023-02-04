@@ -392,60 +392,6 @@ code {
   }
 }
 
-.p-list__title {
-  color: #520096;
-}
-.p-list__items {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 20px;
-}
-.p-list__item {
-  padding: 20px;
-}
-.p-list__filter-button {
-  padding: 10px;
-  text-decoration: none;
-  background-color: rgb(234, 246, 253);
-  border-radius: 20px;
-  margin-left: 10px;
-}
-.p-list__filter-button.is-active {
-  background-color: #a789c3;
-  color: white;
-}
-.p-list__filter-button:hover:not(.is-active) {
-  background-color: #d3ecfb;
-}
-.p-list__header {
-  display: flex;
-  align-items: center;
-  padding: 30px;
-}
-.p-list__filter-list {
-  padding-top: 10px;
-}
-.p-list__not-found {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.p-list__not-found-text {
-  padding-bottom: 10px;
-}
-@media screen and (max-width: 900px) {
-  .p-list__title {
-    padding: 10px;
-  }
-  .p-list__items {
-    padding: 10px;
-  }
-  .p-list__item {
-    padding: 10px 0;
-    width: 100%;
-  }
-}
-
 .p-profile {
   padding-top: 55px;
   padding-left: 40px;
